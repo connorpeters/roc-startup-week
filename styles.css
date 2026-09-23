@@ -964,6 +964,34 @@ a.schedule__event-title {
     max-width: 320px;
 }
 
+.footer__social-link {
+    width: 36px;
+    height: 36px;
+    margin-top: var(--space-sm);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: var(--radius);
+    transition: color var(--transition), border-color var(--transition);
+}
+
+.footer__social-link svg {
+    width: 19px;
+    height: 19px;
+}
+
+.footer__social-link:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.footer__social-link:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
 .footer__links h4 {
     font-family: var(--font-body);
     font-size: 0.7rem;
