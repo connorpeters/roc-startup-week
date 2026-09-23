@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roc Startup Week | November 2–7, 2026</title>
+    <meta name="description" content="A week-long celebration of entrepreneurship and innovation across the Greater Rochester region. November 2–7, 2026.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #ed1c24;
+            --color-primary-dark: #c41019;
+            --color-black: #1a1a1a;
+            --color-dark: #222222;
+            --color-gray-900: #2a2a2a;
+            --color-gray-700: #555555;
+            --color-gray-500: #888888;
+            --color-gray-300: #cccccc;
+            --color-gray-100: #e8e4df;
+            --color-birch: #f7f4f0;
+            --color-birch-dark: #ece8e3;
+            --color-white: #fffdf9;
+
+            --font-heading: 'Abel', sans-serif;
+            --font-body: 'Montserrat', sans-serif;
+
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 4rem;
+            --space-xl: 6rem;
+            --space-2xl: 10rem;
+
+            --max-width: 1100px;
+            --header-height: 72px;
+            --radius: 2px;
+            --transition: 0.3s ease;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--color-black);
+            background: var(--color-birch);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; text-decoration: none; }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            line-height: 1.1;
+        }
+
+        /* HEADER */
+        .header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: var(--header-height);
+            background: var(--color-birch);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .header__inner {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header__logo img { height: 76px; width: auto; padding: 12px 0; }
+
+        .header__nav {
+            display: flex;
+            align-items: center;
+            gap: var(--space-lg);
+        }
+
+        .header__nav a {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: color var(--transition);
+        }
+
+        .header__nav a:hover { color: var(--color-primary); }
+
+        .header__cta {
+            background: var(--color-black);
+            color: var(--color-white) !important;
+            padding: 0.55rem 1.4rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            transition: background var(--transition);
+        }
+
+        .header__cta:hover { background: var(--color-primary); }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--space-xs);
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 22px;
+            height: 1.5px;
+            background: var(--color-black);
+            margin: 5px 0;
+            transition: var(--transition);
+        }
+
+        .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(4px, 5px); }
+        .nav-toggle.active span:nth-child(2) { opacity: 0; }
+        .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(4px, -5px); }
+
+        @media (max-width: 768px) {
+            .nav-toggle { display: block; }
+            .header__nav {
+                position: fixed;
+                top: var(--header-height);
+                left: 0; right: 0; bottom: 0;
+                background: var(--color-birch);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding-top: var(--space-lg);
+                gap: var(--space-md);
+                transform: translateX(100%);
+                transition: transform var(--transition);
+            }
+            .header__nav.open { transform: translateX(0); }
+        }
+
+        /* HERO */
+        .hero {
+            margin-top: var(--header-height);
+            min-height: 92vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            max-width: var(--max-width);
+            margin-left: auto;
+            margin-right: auto;
+            padding: var(--space-xl) var(--space-md);
+            gap: var(--space-lg);
+        }
+
+        .hero__text { padding-right: var(--space-md); }
+
+        .hero__date {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--color-gray-700);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: var(--space-sm);
+        }
+
+        .hero__tagline {
+            font-family: var(--font-heading);
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            color: var(--color-black);
+            margin-bottom: var(--space-sm);
+            letter-spacing: -0.02em;
+        }
+
+        .hero__tagline span { color: var(--color-primary); }
+
+        .hero__subtitle {
+            font-size: 1.05rem;
+            font-weight: 300;
+            color: var(--color-gray-700);
+            max-width: 420px;
+            line-height: 1.8;
+        }
+
+        .hero__image-wrap {
+            position: relative;
+            aspect-ratio: 4/3;
+        }
+
+        .hero__image-wrap::before,
+        .hero__image-wrap::after {
+            content: '';
+            position: absolute;
+            border-radius: var(--radius);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            pointer-events: none;
+        }
+
+        .hero__image-wrap::before {
+            top: 10px;
+            left: 10px;
+            right: -10px;
+            bottom: -10px;
+            border: 1.5px solid rgba(26, 26, 26, 0.3);
+        }
+
+        .hero__image-wrap::after {
+            top: 20px;
+            left: 20px;
+            right: -20px;
+            bottom: -20px;
+            border: 2px solid var(--color-primary);
+        }
+
+        .hero__image-wrap:hover::before {
+            top: 14px;
+            left: 14px;
+            right: -14px;
+            bottom: -14px;
+        }
+
+        .hero__image-wrap:hover::after {
+            top: 28px;
+            left: 28px;
+            right: -28px;
+            bottom: -28px;
+        }
+
+        .hero__image {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: saturate(0.6) contrast(1.08);
+            transition: filter 0.6s ease, transform 0.6s ease;
+        }
+
+        .hero__image-wrap:hover .hero__image img {
+            filter: saturate(1.15) contrast(1.02);
+            transform: scale(1.03);
+        }
+
+        .hero__image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(237,28,36,0.06) 0%, transparent 50%, rgba(0,0,0,0.12) 100%);
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                padding-top: var(--space-lg);
+            }
+            .hero__text { padding-right: 0; }
+        }
+
+        /* HERO IMAGE BREAK */
+        .hero-image-break {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero-image-break img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 40%;
+            filter: saturate(0.7) contrast(1.05);
+        }
+
+        .hero-image-break::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, var(--color-birch) 0%, transparent 8%, transparent 92%, var(--color-birch-dark) 100%);
+            pointer-events: none;
+        }
+
+        /* LOGO BANNER */
+        .logo-banner {
+            background: var(--color-primary);
+            padding: 1.2rem 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .logo-banner__track {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            animation: scroll-logos 20s linear infinite;
+            width: max-content;
+        }
+
+        .logo-banner__item {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: var(--color-white);
+            white-space: nowrap;
+            opacity: 0.9;
+            letter-spacing: 0.02em;
+        }
+
+        .logo-banner__dot {
+            width: 5px;
+            height: 5px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        @keyframes scroll-logos {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: var(--space-2xl) var(--space-md);
+        }
+
+        .section__inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .section__title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: var(--space-sm);
+            letter-spacing: -0.02em;
+        }
+
+        .section__subtitle {
+            color: var(--color-gray-700);
+            max-width: 550px;
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: var(--space-lg);
+        }
+
+        /* ABOUT */
+        .about { background: var(--color-birch); }
+
+        .about__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+        }
+
+        .about__card {
+            padding: var(--space-md);
+            background: var(--color-white);
+            border-radius: var(--radius);
+            border-top: 2px solid var(--color-black);
+            transition: border-color var(--transition);
+        }
+
+        .about__card:hover { border-top-color: var(--color-primary); }
+
+        .about__card-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: var(--space-sm);
+        }
+
+        .about__card-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--color-black);
+            fill: none;
+            stroke-width: 1.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .about__card:hover .about__card-icon svg { stroke: var(--color-primary); }
+
+        .about__card h3 {
+            font-size: 1.5rem;
+            margin-bottom: var(--space-xs);
+        }
+
+        .about__card p {
+            color: var(--color-gray-700);
+            font-size: 0.9rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .about__split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            align-items: center;
+            margin-bottom: var(--space-lg);
+        }
+
+        .about__image-wrap {
+            position: relative;
+            aspect-ratio: 4/3;
+        }
+
+        .about__image-wrap::before,
+        .about__image-wrap::after {
+            content: '';
+            position: absolute;
+            border-radius: var(--radius);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            pointer-events: none;
+        }
+
+        .about__image-wrap::before {
+            top: 10px;
+            left: 10px;
+            right: -10px;
+            bottom: -10px;
+            border: 1.5px solid rgba(26, 26, 26, 0.3);
+        }
+
+        .about__image-wrap::after {
+            top: 20px;
+            left: 20px;
+            right: -20px;
+            bottom: -20px;
+            border: 2px solid var(--color-primary);
+        }
+
+        .about__image-wrap:hover::before {
+            top: 14px;
+            left: 14px;
+            right: -14px;
+            bottom: -14px;
+        }
+
+        .about__image-wrap:hover::after {
+            top: 28px;
+            left: 28px;
+            right: -28px;
+            bottom: -28px;
+        }
+
+        .about__image {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .about__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: saturate(0.6) contrast(1.08);
+            transition: filter 0.6s ease, transform 0.6s ease;
+        }
+
+        .about__image-wrap:hover .about__image img {
+            filter: saturate(1.15) contrast(1.02);
+            transform: scale(1.03);
+        }
+
+        .about__image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(237,28,36,0.06) 0%, transparent 50%, rgba(0,0,0,0.12) 100%);
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .about__grid { grid-template-columns: 1fr; }
+            .about__split { grid-template-columns: 1fr; }
+        }
+
+        /* SCHEDULE */
+        .schedule { background: var(--color-birch-dark); }
+
+        .schedule__list { list-style: none; }
+
+        .schedule__item {
+            display: flex;
+            align-items: baseline;
+            gap: 0;
+            padding: var(--space-sm) 0;
+        }
+
+        .schedule__day {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--color-primary);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .schedule__dots {
+            flex: 1;
+            border-bottom: 1.5px dotted var(--color-gray-300);
+            margin: 0 var(--space-sm);
+            position: relative;
+            top: -4px;
+        }
+
+        .schedule__event {
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: var(--color-gray-700);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .schedule__item {
+                flex-wrap: wrap;
+            }
+            .schedule__dots { display: none; }
+            .schedule__event {
+                white-space: normal;
+                flex-basis: 100%;
+                padding-left: 0;
+                margin-top: 0.25rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* TIMELINE — Horizontal scroll */
+        .timeline {
+            background: var(--color-dark);
+            color: var(--color-white);
+            padding: var(--space-2xl) 0;
+            overflow: hidden;
+        }
+
+        .timeline .section__inner {
+            padding: 0 var(--space-md);
+        }
+
+        .timeline .section__title { color: var(--color-white); }
+        .timeline .section__subtitle { color: rgba(255,255,255,0.6); }
+
+        .timeline__scroll {
+            display: flex;
+            gap: var(--space-md);
+            overflow-x: auto;
+            padding: var(--space-lg) var(--space-md) var(--space-md);
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: var(--color-primary) var(--color-gray-900);
+        }
+
+        .timeline__scroll::-webkit-scrollbar { height: 3px; }
+        .timeline__scroll::-webkit-scrollbar-track { background: var(--color-gray-900); }
+        .timeline__scroll::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 2px; }
+
+        .timeline__card {
+            flex: 0 0 380px;
+            scroll-snap-align: start;
+            background: var(--color-gray-900);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.04);
+            transition: transform var(--transition), border-color var(--transition);
+        }
+
+        .timeline__card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(237,28,36,0.4);
+        }
+
+        .timeline__card-image {
+            height: 240px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .timeline__card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(40%) contrast(1.05) saturate(0.7);
+            transition: filter var(--transition);
+        }
+
+        .timeline__card:hover .timeline__card-image img {
+            filter: grayscale(0%) contrast(1) saturate(1);
+        }
+
+        .timeline__card-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 60px;
+            background: linear-gradient(to top, var(--color-gray-900), transparent);
+        }
+
+        .timeline__card-body {
+            padding: var(--space-md);
+        }
+
+        .timeline__card-year {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            color: var(--color-primary);
+            line-height: 1;
+            margin-bottom: var(--space-xs);
+        }
+
+        .timeline__card-title {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            color: var(--color-white);
+            margin-bottom: var(--space-xs);
+        }
+
+        .timeline__card-text {
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.8;
+        }
+
+        .timeline__card-credit {
+            font-size: 0.7rem;
+            color: var(--color-gray-500);
+            font-style: italic;
+            margin-top: var(--space-xs);
+        }
+
+        .timeline__card--now {
+            background: linear-gradient(135deg, rgba(237,28,36,0.08), var(--color-gray-900));
+            border-color: var(--color-primary);
+        }
+
+        .timeline__card--now .timeline__card-image {
+            background: linear-gradient(135deg, var(--color-primary-dark), var(--color-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .timeline__card--now .timeline__card-image img {
+            width: 55%;
+            height: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .timeline__card--now .timeline__card-image::after { display: none; }
+
+        @media (max-width: 768px) {
+            .timeline__card { flex: 0 0 300px; }
+            .timeline__card-image { height: 180px; }
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            background: var(--color-birch);
+        }
+
+        .cta-section .section__inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cta-section .section__subtitle {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 1rem 2.8rem;
+            border-radius: var(--radius);
+            transition: all var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn--primary {
+            background: var(--color-black);
+            color: var(--color-white);
+        }
+
+        .btn--primary:hover {
+            background: var(--color-primary);
+            transform: translateY(-1px);
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--color-black);
+            color: rgba(255,255,255,0.6);
+            padding: var(--space-xl) var(--space-md) var(--space-md);
+        }
+
+        .footer__inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: var(--space-lg);
+        }
+
+        .footer__brand img {
+            height: 40px;
+            margin-bottom: var(--space-sm);
+            filter: brightness(0) invert(1);
+        }
+
+        .footer__brand p {
+            font-size: 0.85rem;
+            font-weight: 300;
+            line-height: 1.8;
+            max-width: 320px;
+        }
+
+        .footer__links h4 {
+            font-family: var(--font-body);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--color-white);
+            margin-bottom: var(--space-sm);
+        }
+
+        .footer__links ul { list-style: none; }
+        .footer__links li { margin-bottom: var(--space-xs); }
+
+        .footer__links a {
+            font-size: 0.85rem;
+            font-weight: 300;
+            transition: color var(--transition);
+        }
+
+        .footer__links a:hover { color: var(--color-primary); }
+
+        .footer__bottom {
+            max-width: var(--max-width);
+            margin: var(--space-lg) auto 0;
+            padding-top: var(--space-sm);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--color-gray-500);
+        }
+
+        @media (max-width: 768px) {
+            .footer__inner { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header__inner">
+            <a href="/" class="header__logo">
+                <img src="images/RocStartupWeekLogo1.png" alt="Roc Startup Week">
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="header__nav">
+                <a href="#schedule">Schedule</a>
+                <a href="#about">About</a>
+                <a href="#history">Our Story</a>
+                <a href="#get-involved" class="header__cta">Get Involved</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero__text">
+            <p class="hero__date">November 2–7, 2026 &bull; Rochester, NY</p>
+            <h1 class="hero__tagline">Where innovation is <span>nothing new.</span></h1>
+            <p class="hero__subtitle">A week-long celebration of entrepreneurship and innovation across the Greater Rochester region. Workshops, founder talks, investor access, and networking.</p>
+        </div>
+        <div class="hero__image-wrap">
+            <div class="hero__image">
+                <img src="images/rochester-high-falls-drone-hero.webp" alt="Rochester High Falls at sunset">
+            </div>
+        </div>
+    </section>
+
+    <!-- HERO IMAGE BREAK -->
+    <div class="hero-image-break">
+        <img src="images/Rochester High Falls.png" alt="Rochester High Falls">
+    </div>
+
+    <!-- SCHEDULE -->
+    <section class="section schedule" id="schedule">
+        <div class="section__inner">
+            <h2 class="section__title">The Week at a Glance</h2>
+            <p class="section__subtitle">Events hosted across Rochester's innovation ecosystem. More to be announced.</p>
+            <ul class="schedule__list">
+                <li class="schedule__item">
+                    <span class="schedule__day">Mon Nov 2</span>
+                    <span class="schedule__dots"></span>
+                    <span class="schedule__event">Kick-off at NextCorps — Global Entrepreneurship Week begins</span>
+                </li>
+                <li class="schedule__item">
+                    <span class="schedule__day">Tue Nov 3</span>
+                    <span class="schedule__dots"></span>
+                    <span class="schedule__event">Community programming — TBA</span>
+                </li>
+                <li class="schedule__item">
+                    <span class="schedule__day">Wed Nov 4</span>
+                    <span class="schedule__dots"></span>
+                    <span class="schedule__event">UVC Investor Mentor Office Hours</span>
+                </li>
+                <li class="schedule__item">
+                    <span class="schedule__day">Thu Nov 5</span>
+                    <span class="schedule__dots"></span>
+                    <span class="schedule__event">First Thursday — RocGrowth Networking</span>
+                </li>
+                <li class="schedule__item">
+                    <span class="schedule__day">Fri Nov 6</span>
+                    <span class="schedule__dots"></span>
+                    <span class="schedule__event">Community programming — TBA</span>
+                </li>
+                <li class="schedule__item">
+                    <span class="schedule__day">Sat Nov 7</span>
+                    <span class="schedule__dots"></span>
+                    <span class="schedule__event">Mark Ain Business Model Competition — University of Rochester</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- LOGO BANNER -->
+    <div class="logo-banner">
+        <div class="logo-banner__track">
+            <span class="logo-banner__item">NextCorps</span>
+            <span class="logo-banner__dot"></span>
+            <span class="logo-banner__item">University of Rochester</span>
+            <span class="logo-banner__dot"></span>
+            <span class="logo-banner__item">Ain Center</span>
+            <span class="logo-banner__dot"></span>
+            <span class="logo-banner__item">Upstate Venture Connect</span>
+            <span class="logo-banner__dot"></span>
+            <span class="logo-banner__item">RocGrowth</span>
+            <span class="logo-banner__dot"></span>
+            <span class="logo-banner__item">RIT</span>
+            <span class="logo-banner__dot"></span>
+            <span class="logo-banner__item">High Tech Rochester</span>
+            <span class="logo-banner__dot"></span>
+            <span class="logo-banner__item">NextCorps</span>
+            <span class="logo-banner__dot"></span>
+            <span class="logo-banner__item">University of Rochester</span>
+            <span class="logo-banner__dot"></span>
+            <span class="logo-banner__item">Ain Center</span>
+            <span class="logo-banner__dot"></span>
+            <span class="logo-banner__item">Upstate Venture Connect</span>
+            <span class="logo-banner__dot"></span>
+            <span class="logo-banner__item">RocGrowth</span>
+            <span class="logo-banner__dot"></span>
+            <span class="logo-banner__item">RIT</span>
+            <span class="logo-banner__dot"></span>
+            <span class="logo-banner__item">High Tech Rochester</span>
+            <span class="logo-banner__dot"></span>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+        <div class="section__inner">
+            <div class="about__split">
+                <div>
+                    <h2 class="section__title">What is Roc Startup Week?</h2>
+                    <p class="section__subtitle">A week-long series of events bringing together students, founders, investors, innovators, business leaders, and community members to celebrate and strengthen Rochester's entrepreneurial ecosystem.</p>
+                </div>
+                <div class="about__image-wrap">
+                    <div class="about__image">
+                        <img src="images/rochester-skyline-with-flowers.jpg" alt="Rochester skyline">
+                    </div>
+                </div>
+            </div>
+            <div class="about__grid">
+                <div class="about__card">
+                    <div class="about__card-icon">
+                        <svg viewBox="0 0 48 48">
+                            <path d="M6 8c0 0 5-2 18-2s18 2 18 2v32c0 0-5-1.5-18-1.5S6 40 6 40V8z"/>
+                            <line x1="24" y1="6" x2="24" y2="38.5"/>
+                            <path d="M12 14c3-0.5 7-0.8 12-0.8"/>
+                            <path d="M12 20c3-0.5 7-0.8 12-0.8"/>
+                            <path d="M12 26c3-0.5 7-0.8 12-0.8"/>
+                        </svg>
+                    </div>
+                    <h3>Learn</h3>
+                    <p>Workshops and panels led by experienced founders and industry experts to sharpen your skills.</p>
+                </div>
+                <div class="about__card">
+                    <div class="about__card-icon">
+                        <svg viewBox="0 0 48 48">
+                            <circle cx="24" cy="12" r="4"/>
+                            <circle cx="10" cy="36" r="4"/>
+                            <circle cx="38" cy="36" r="4"/>
+                            <circle cx="38" cy="18" r="3"/>
+                            <circle cx="10" cy="22" r="3"/>
+                            <line x1="24" y1="16" x2="10" y2="32"/>
+                            <line x1="24" y1="16" x2="38" y2="32"/>
+                            <line x1="22" y1="14" x2="13" y2="20"/>
+                            <line x1="26" y1="14" x2="35" y2="17"/>
+                        </svg>
+                    </div>
+                    <h3>Connect</h3>
+                    <p>Networking events and office hours with investors, mentors, and fellow entrepreneurs.</p>
+                </div>
+                <div class="about__card">
+                    <div class="about__card-icon">
+                        <svg viewBox="0 0 48 48">
+                            <path d="M16 6h16v18c0 5-3.5 9-8 9s-8-4-8-9V6z"/>
+                            <path d="M16 10H8c0 0 0 10 8 12"/>
+                            <path d="M32 10h8c0 0 0 10-8 12"/>
+                            <line x1="24" y1="33" x2="24" y2="38"/>
+                            <path d="M16 42h16l-2-4H18l-2 4z"/>
+                        </svg>
+                    </div>
+                    <h3>Compete</h3>
+                    <p>Founder showcases and business model challenges to test your ideas and gain support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="section timeline" id="history">
+        <div class="section__inner">
+            <h2 class="section__title">Rochester: A City Built on Innovation</h2>
+            <p class="section__subtitle">Rochester was a tech city before tech cities existed. Scroll through two centuries of relentless invention.</p>
+        </div>
+        <div class="timeline__scroll">
+            <div class="timeline__card">
+                <div class="timeline__card-image">
+                    <img src="images/donkeys on erie canal in rochester.webp" alt="Mules pulling barges on the Erie Canal in Rochester">
+                </div>
+                <div class="timeline__card-body">
+                    <div class="timeline__card-year">1825</div>
+                    <h3 class="timeline__card-title">The Erie Canal</h3>
+                    <p class="timeline__card-text">Built by muscle alone, the canal linked the Great Lakes to New York Harbor and put Rochester at the crossroads of American commerce. A village became a boomtown overnight.</p>
+                </div>
+            </div>
+
+            <div class="timeline__card">
+                <div class="timeline__card-image">
+                    <img src="images/erie-canal-rochester.jpg" alt="Erie Canal crossing the Genesee River, Rochester, 1904">
+                </div>
+                <div class="timeline__card-body">
+                    <div class="timeline__card-year">1853</div>
+                    <h3 class="timeline__card-title">Bausch & Lomb</h3>
+                    <p class="timeline__card-text">Two immigrants perfected mass-produced optical lenses — for spectacles, then microscopes, then cameras. Rochester became the world capital of precision optics.</p>
+                </div>
+            </div>
+
+            <div class="timeline__card">
+                <div class="timeline__card-image">
+                    <img src="images/1907 the kodak story.webp" alt="The Kodak Story advertisement, circa 1907">
+                </div>
+                <div class="timeline__card-body">
+                    <div class="timeline__card-year">1888</div>
+                    <h3 class="timeline__card-title">Eastman Kodak</h3>
+                    <p class="timeline__card-text">"You press the button, we do the rest." George Eastman democratized photography. 60,000+ Rochester employees. 90% US film market share. A verb, a noun, a way of life.</p>
+                </div>
+            </div>
+
+            <div class="timeline__card">
+                <div class="timeline__card-image">
+                    <img src="images/kodak ad in fall.jpg" alt="Kodak camera advertisement — Keep your memories fresh in snapshots">
+                </div>
+                <div class="timeline__card-body">
+                    <div class="timeline__card-year">1935</div>
+                    <h3 class="timeline__card-title">Kodachrome</h3>
+                    <p class="timeline__card-text">Color film arrives. Rochester gives the world color photography — and the ability to preserve not just moments, but the warmth and life within them.</p>
+                </div>
+            </div>
+
+            <div class="timeline__card">
+                <div class="timeline__card-image">
+                    <img src="images/xerox team with printer - credit DnC.webp" alt="Xerox team with the first 914 copier">
+                </div>
+                <div class="timeline__card-body">
+                    <div class="timeline__card-year">1959</div>
+                    <h3 class="timeline__card-title">Xerox 914</h3>
+                    <p class="timeline__card-text">The first plain-paper copier ships from Rochester — labeled "No. 1, Ship to Boston." Xerox becomes a verb. Its research center later invents the GUI, the mouse, and Ethernet.</p>
+                    <p class="timeline__card-credit">Photo: Democrat and Chronicle</p>
+                </div>
+            </div>
+
+            <div class="timeline__card timeline__card--now">
+                <div class="timeline__card-image">
+                    <img src="images/RocStartupWeekLogo1.png" alt="Roc Startup Week">
+                </div>
+                <div class="timeline__card-body">
+                    <div class="timeline__card-year">2026</div>
+                    <h3 class="timeline__card-title">The Next Chapter</h3>
+                    <p class="timeline__card-text">Same audacity, new model. World-class universities, deep talent, and hundreds of startups writing Rochester's next act. This time, the innovation is distributed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta-section" id="get-involved">
+        <div class="section__inner">
+            <h2 class="section__title">Get Involved</h2>
+            <p class="section__subtitle">Want to host an event, sponsor, or participate? We'd love to have your organization be part of Roc Startup Week 2026.</p>
+            <a href="https://airtable.com/appzNGSk0bcNRZ2if/pagiuuVoqhZy5DVc9/form" class="btn btn--primary" target="_blank" rel="noopener">Submit Your Event</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <img src="images/RocStartupWeekLogo1.png" alt="Roc Startup Week">
+                <p>A week-long celebration of entrepreneurship and innovation across the Greater Rochester region. November 2–7, 2026.</p>
+            </div>
+            <div class="footer__links">
+                <h4>Navigate</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#schedule">Schedule</a></li>
+                    <li><a href="#history">Our Story</a></li>
+                    <li><a href="#get-involved">Get Involved</a></li>
+                </ul>
+            </div>
+            <div class="footer__links">
+                <h4>Organized By</h4>
+                <ul>
+                    <li><a href="https://www.rochester.edu/ain-center/" target="_blank" rel="noopener">Ain Center for Entrepreneurship & Innovation</a></li>
+                    <li><a href="https://www.rochester.edu" target="_blank" rel="noopener">University of Rochester</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2026 Roc Startup Week. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const toggle = document.querySelector('.nav-toggle');
+        const nav = document.querySelector('.header__nav');
+        toggle.addEventListener('click', () => { toggle.classList.toggle('active'); nav.classList.toggle('open'); });
+        nav.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { toggle.classList.remove('active'); nav.classList.remove('open'); }); });
+    </script>
+</body>
+</html>

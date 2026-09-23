@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+
+# Logs and process files
+*.log
+*.pid
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Temporary render and working files
+tmp/
+temp/
+.tmp/
+
+# Browser and test artifacts
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+
+# Editor-local state
+.idea/
+*.swp
+*.swo
+*~
+
+# Keep output/ tracked: it contains the approved, shareable collateral exports.

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Roc Startup Week Social Creative</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="creative.css">
+</head>
+<body>
+  <main id="creative" aria-label="Roc Startup Week marketing graphic"></main>
+  <script type="module">
+    import { SITE_URL, EVENT_DATES, sizes, days, featuredDay, concepts } from './data.mjs';
+
+    const params = new URLSearchParams(location.search);
+    const conceptKey = concepts[params.get('concept')] ? params.get('concept') : 'coming';
+    const sizeKey = sizes[params.get('size')] ? params.get('size') : 'instagram';
+    const concept = concepts[conceptKey];
+    const size = sizes[sizeKey];
+    const day = days.find(item => item.key === (params.get('day') || featuredDay)) || days[0];
+    const artwork = {
+      illustrated: '../images/rochester high falls kodak tower illustrated.png',
+      whiteIllustrated: '../images/rochester skyline illustrated white.png',
+      highfalls: '../images/rochester-high-falls-drone-hero.webp',
+      skyline: '../images/rochester-skyline-with-flowers.jpg',
+      canal: '../images/erie-canal-rochester.jpg',
+      kodak: '../images/1907 the kodak story.webp'
+    };
+    const defaultArtwork = {
+      'one-week': 'whiteIllustrated',
+      'dont-miss': 'skyline',
+      'intro-red': 'whiteIllustrated',
+      'thank-you': 'whiteIllustrated',
+      'see-you-next-year': 'whiteIllustrated'
+    };
+    const artKey = artwork[params.get('art')] ? params.get('art') : (defaultArtwork[conceptKey] || 'illustrated');
+    const canvas = document.querySelector('#creative');
+    const isLandscape = size.width / size.height > 1.35;
+
+    document.documentElement.style.setProperty('--canvas-width', `${size.width}px`);
+    document.documentElement.style.setProperty('--canvas-height', `${size.height}px`);
+    canvas.className = `creative creative--${concept.mode} creative--${isLandscape ? 'landscape' : 'square'} concept--${conceptKey} size--${sizeKey} art--${artKey}`;
+
+    const eventRows = day.events.map(event => `
+      <li class="event-row ${event.headliner ? 'event-row--headliner' : ''}">
+        <time>${event.time}</time>
+        <div><div class="event-title-line"><strong>${event.title}</strong>${event.headliner ? '<b class="headliner-pill">Headliner</b>' : ''}</div><span>${event.detail}</span></div>
+      </li>`).join('');
+
+    const calendar = days.map(item => `
+      <section class="calendar-day">
+        <h2><span>${item.day}</span>${item.date}</h2>
+        <ul>${item.events.map(event => `<li class="${event.headliner ? 'is-headliner' : ''}"><time>${event.time}</time><span class="calendar-event"><span>${event.title}</span>${event.headliner ? '<b class="headliner-pill">Headliner</b>' : ''}</span></li>`).join('')}</ul>
+      </section>`).join('');
+
+    const logo = `<img class="brand-logo" src="../images/brand/roc-startup-week-full-color-transparent.png" alt="Roc Startup Week">`;
+    const reversedLogo = `<img class="brand-logo brand-logo--reversed" src="../images/brand/roc-startup-week-white-reversed.png" alt="Roc Startup Week">`;
+    const footer = `<footer><span>${EVENT_DATES}</span><span>${SITE_URL.replace('https://', '')}</span></footer>`;
+    const statement = `
+      <img class="cityscape" src="${artwork[artKey]}" alt="">
+      <div class="frame-rule"></div>
+      <header>${concept.mode.includes('dark') ? reversedLogo : logo}</header>
+      <section class="message"><h1>${concept.title.replace('\n', '<br>')}</h1><p>${concept.deck}</p></section>
+      ${footer}`;
+
+    if (concept.mode === 'calendar') {
+      canvas.innerHTML = `<header>${logo}<div><h1>${concept.title}</h1><p>${concept.deck}</p></div></header><div class="calendar">${calendar}</div>${footer}`;
+    } else if (concept.mode === 'daily' || concept.mode === 'today') {
+      canvas.innerHTML = `
+        <header>${logo}<div class="day-stamp"><strong>${day.day}</strong><span>${day.date}</span></div></header>
+        <section class="daily-heading"><h1>${concept.mode === 'today' ? concept.title : `${day.day}’s Schedule`}</h1><p>${concept.deck}</p></section>
+        <ol class="event-list">${eventRows}</ol>${footer}`;
+    } else {
+      canvas.innerHTML = statement;
+    }
+
+    canvas.dataset.ready = 'true';
+  </script>
+</body>
+</html>

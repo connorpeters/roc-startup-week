@@ -1,0 +1,15 @@
+{
+  "name": "roc-startup-week-collateral",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Repeatable HTML-to-PNG/PDF marketing collateral pipeline for Roc Startup Week",
+  "scripts": {
+    "brand-assets": "node scripts/build-brand-assets.js",
+    "export:collateral": "node scripts/export-collateral.js",
+    "export": "npm run brand-assets && npm run export:collateral"
+  },
+  "dependencies": {
+    "puppeteer": "^25.12.0",
+    "qrcode": "^1.5.4"
+  }
+}

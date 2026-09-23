@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roc Startup Week | Nordic C — Serif</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #ed1c24;
+            --color-primary-dark: #c41019;
+            --color-black: #1a1a1a;
+            --color-dark: #222222;
+            --color-gray-900: #2a2a2a;
+            --color-gray-700: #555555;
+            --color-gray-500: #888888;
+            --color-gray-300: #cccccc;
+            --color-gray-100: #e8e4df;
+            --color-birch: #f7f4f0;
+            --color-birch-dark: #ece8e3;
+            --color-white: #fffdf9;
+
+            --font-heading: 'Abel', sans-serif;
+            --font-hero: 'Cormorant Garamond', serif;
+            --font-body: 'Montserrat', sans-serif;
+
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 4rem;
+            --space-xl: 6rem;
+            --space-2xl: 10rem;
+
+            --max-width: 1100px;
+            --header-height: 72px;
+            --radius: 2px;
+            --transition: 0.3s ease;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--color-black);
+            background: var(--color-birch);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; text-decoration: none; }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 400;
+            line-height: 1.1;
+        }
+
+        /* HEADER */
+        .header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: var(--header-height);
+            background: var(--color-birch);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .header__inner {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header__logo img { height: 76px; width: auto; }
+
+        .header__nav {
+            display: flex;
+            align-items: center;
+            gap: var(--space-lg);
+        }
+
+        .header__nav a {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: color var(--transition);
+        }
+
+        .header__nav a:hover { color: var(--color-primary); }
+
+        .header__cta {
+            background: var(--color-black);
+            color: var(--color-white) !important;
+            padding: 0.55rem 1.4rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            transition: background var(--transition);
+        }
+
+        .header__cta:hover { background: var(--color-primary); }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: var(--space-xs);
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 22px;
+            height: 1.5px;
+            background: var(--color-black);
+            margin: 5px 0;
+            transition: var(--transition);
+        }
+
+        .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(4px, 5px); }
+        .nav-toggle.active span:nth-child(2) { opacity: 0; }
+        .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(4px, -5px); }
+
+        @media (max-width: 768px) {
+            .nav-toggle { display: block; }
+            .header__nav {
+                position: fixed;
+                top: var(--header-height);
+                left: 0; right: 0; bottom: 0;
+                background: var(--color-birch);
+                flex-direction: column;
+                justify-content: flex-start;
+                padding-top: var(--space-lg);
+                gap: var(--space-md);
+                transform: translateX(100%);
+                transition: transform var(--transition);
+            }
+            .header__nav.open { transform: translateX(0); }
+        }
+
+        /* HERO */
+        .hero {
+            margin-top: var(--header-height);
+            min-height: 92vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            max-width: var(--max-width);
+            margin-left: auto;
+            margin-right: auto;
+            padding: var(--space-xl) var(--space-md);
+            gap: var(--space-lg);
+        }
+
+        .hero__text { padding-right: var(--space-md); }
+
+        .hero__date {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--color-gray-700);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: var(--space-sm);
+        }
+
+        .hero__tagline {
+            font-family: var(--font-hero);
+            font-size: clamp(2.8rem, 5.5vw, 4.4rem);
+            font-weight: 300;
+            color: var(--color-black);
+            margin-bottom: var(--space-sm);
+            letter-spacing: -0.01em;
+            line-height: 1.1;
+            font-style: italic;
+        }
+
+        .hero__tagline span {
+            color: var(--color-primary);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        .hero__subtitle {
+            font-size: 1.05rem;
+            font-weight: 300;
+            color: var(--color-gray-700);
+            max-width: 420px;
+            line-height: 1.8;
+        }
+
+        .hero__image {
+            border-radius: var(--radius);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+
+        .hero__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+                padding-top: var(--space-lg);
+            }
+            .hero__text { padding-right: 0; }
+        }
+
+        /* VARIANT LABEL */
+        .variant-label {
+            position: fixed;
+            bottom: var(--space-md);
+            right: var(--space-md);
+            background: var(--color-dark);
+            color: var(--color-white);
+            padding: 0.5rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-radius: var(--radius);
+            z-index: 9999;
+            font-family: var(--font-hero);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header__inner">
+            <a href="/" class="header__logo">
+                <img src="images/RocStartupWeekLogo1.png" alt="Roc Startup Week">
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="header__nav">
+                <a href="#about">About</a>
+                <a href="#schedule">Schedule</a>
+                <a href="#history">Our Story</a>
+                <a href="#get-involved" class="header__cta">Get Involved</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero__text">
+            <p class="hero__date">November 2–7, 2026 &bull; Rochester, NY</p>
+            <h1 class="hero__tagline">Where innovation is <span>nothing new.</span></h1>
+            <p class="hero__subtitle">A week-long celebration of entrepreneurship and innovation across the Greater Rochester region. Workshops, founder talks, investor access, and networking.</p>
+        </div>
+        <div class="hero__image">
+            <img src="images/rochester-high-falls-drone-hero.webp" alt="Rochester High Falls at sunset">
+        </div>
+    </section>
+
+    <div class="variant-label">C — Serif</div>
+
+    <script>
+        const toggle = document.querySelector('.nav-toggle');
+        const nav = document.querySelector('.header__nav');
+        toggle.addEventListener('click', () => { toggle.classList.toggle('active'); nav.classList.toggle('open'); });
+        nav.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { toggle.classList.remove('active'); nav.classList.remove('open'); }); });
+    </script>
+</body>
+</html>
