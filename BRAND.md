@@ -100,14 +100,14 @@ When icons are needed, use **lineal SVGs** — single-weight strokes (1.2px), ro
 
 ## Page Structure (Top to Bottom)
 
-1. **Fixed header** — Logo left, nav right (uppercase labels). Birch background with subtle bottom border. "Get Involved" CTA as a dark pill button.
+1. **Fixed header** — Logo left, nav right (uppercase labels). Birch background with subtle bottom border. "View Schedule (PDF)" CTA as a dark button linking to the full schedule PDF.
 2. **Hero** — Centered text layered over a full-width, low-opacity (≈28%) cityscape illustration. Date line in small uppercase, tagline large with the accent phrase in red italic, subtitle below. The illustration bleeds to the top of the section and fades naturally into the page background.
 3. **Logo banner** — Red background, scrolling org names separated by small dots. Steady ambient animation (20s linear infinite).
 4. **Split media ("200 Years of Innovation")** — Text left, Rochester skyline illustration right with offset-border effect. Provides visual rhythm and grounds the historical narrative before the schedule.
 5. **Schedule** — Day-to-event connected by leader dots. Days in red (Abel), events in gray body text. Separated from sections above/below by 1px borders.
 6. **About** — What is Roc Startup Week. Three cards with lineal icons (Learn, Connect, Compete), left-border accent that turns red on hover.
 7. **Timeline** — Dark background. Horizontal scroll of historical cards with desaturated images, red year markers, and gradient fade at image base. Cards warm to full color on hover.
-8. **CTA** — Clean, centered. Single dark button ("Submit Your Event") that turns red on hover. Separated from above by a 1px border.
+8. **CTA** — Clean, centered. Single dark button ("View Schedule (PDF)") that turns red on hover. Separated from above by a 1px border.
 9. **Footer** — Dark. Three-column: brand + description, navigation, organizers. Copyright bar at bottom.
 
 ---
@@ -118,7 +118,7 @@ When icons are needed, use **lineal SVGs** — single-weight strokes (1.2px), ro
 - The schedule answers the question people came with: "What's happening?" It's high on the page, not buried.
 - The about section provides context for people who need it. Most won't.
 - The history timeline is the emotional hook — it's the story that makes Rochester feel inevitable, not aspirational.
-- The CTA is for organizers submitting events. It should feel like an invitation, not a sales pitch.
+- The CTA encourages attendance by inviting visitors to view the PDF schedule and choose events. It should feel like an invitation, not a sales pitch.
 - Never describe Rochester as "up and coming" or "emerging." It's a city that already did it and is doing it again.
 
 ---

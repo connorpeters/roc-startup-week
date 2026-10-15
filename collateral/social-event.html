@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Roc Startup Week Event Callout</title>
+<link href="https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{font-family:Montserrat,Arial,sans-serif;background:#f7f4f0;color:#1a1a1a}#creative{container-type:size;height:100%;padding:6%;display:flex;flex-direction:column;gap:3cqh}header{display:flex;justify-content:space-between;align-items:center;gap:4cqw}header img{width:28cqw}header span{font-size:min(2.6cqw,4cqh);font-weight:600}.copy{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:2.5cqh}.copy-row{display:flex;align-items:center;gap:4cqw;width:100%}.copy-text{flex:1;min-width:0;display:flex;flex-direction:column;gap:2.5cqh}.speaker-col{display:flex;flex-direction:column;align-items:center;gap:1.5cqh;flex-shrink:0}.headshot{width:17cqw;height:17cqw;max-width:15cqh;max-height:15cqh;border-radius:50%;object-fit:cover}.speaker-qr{width:10cqw;max-width:9cqh}h1{font-family:Abel,Arial,sans-serif;font-weight:400;font-size:min(7cqw,9cqh);line-height:1.08;margin:0;max-width:100%}.headliner-pill{background:#ed1c24;color:#fffdf9;border-radius:2px;padding:.5cqh .8cqw;font-size:min(1.8cqw,2.5cqh);font-weight:700}p{margin:0;font-size:min(2.7cqw,3.8cqh);line-height:1.4}.summary{max-width:90%;font-size:min(2.5cqw,3.5cqh)}.time{font-weight:700}.entry{font-size:min(2.2cqw,3cqh);font-weight:600}.speaker-name{font-weight:600;font-size:min(2.2cqw,3cqh)}footer{display:flex;justify-content:space-between;gap:3cqw;border-top:2px solid #ed1c24;padding-top:2cqh;font-size:min(1.8cqw,2.5cqh);font-weight:600}
+</style></head><body><main id="creative"></main><script type="module">
+import {days,additionalDays,sizes,SITE_URL} from './data.mjs';
+import {escapeHtml as esc,badge} from './schedule.mjs';
+const params=new URLSearchParams(location.search);
+const size=sizes[params.get('size')]||sizes.instagram;
+const day=[...days,...additionalDays].find(d=>d.events.some(e=>e.id===params.get('event')));
+if(!day) throw new Error('Unknown event');
+const event=day.events.find(e=>e.id===params.get('event'));
+const canvas=document.querySelector('#creative');
+const speakerLine=event.speaker?`<p class="speaker-name">${esc(event.speaker.name)}</p>`:'';
+const headshotSrc=event.speaker?.headshot?`../${event.speaker.headshot}`:'';
+const qrSlug=event.speaker?.headshot?event.speaker.headshot.replace(/.*\//,'').replace(/\.[^.]+$/,''):'';
+const qrSrc=qrSlug?`../images/speakers/qr-${qrSlug}.png`:'';
+const copyInner=`<div class="copy-text"><h1>${esc(event.title)}</h1>${event.headliner?badge:''}${speakerLine}<p class="summary">${esc(event.tvSummary||event.description||'')}</p><p class="time">${esc(event.time)}</p><p>${esc(event.location)}</p>${[event.cost,event.registration].filter(Boolean).length?`<p class="entry">${esc([event.cost,event.registration].filter(Boolean).join(' · '))}</p>`:''}</div>`;
+const speakerCol=headshotSrc?`<div class="speaker-col"><img class="headshot" src="${esc(headshotSrc)}" alt="${esc(event.speaker.name)}"><img class="speaker-qr" src="${esc(qrSrc)}" alt="LinkedIn"></div>`:'';
+canvas.innerHTML=`<header><img src="../images/brand/roc-startup-week-full-color-transparent.png" alt="Roc Startup Week"><span>${esc(day.day)} · ${esc(day.date)}, 2026</span></header><section class="copy">${headshotSrc?`<div class="copy-row">${copyInner}${speakerCol}</div>`:copyInner}</section><footer><span>${day.key.startsWith('after-week')?'After Startup Week':'November 2–7, 2026'}</span><span>${SITE_URL.replace('https://','')}</span></footer>`;
+if(headshotSrc){const img=canvas.querySelector('.headshot');await new Promise(r=>{img.addEventListener('load',r,{once:true});img.addEventListener('error',()=>{const col=canvas.querySelector('.speaker-col');if(col)col.remove();const row=canvas.querySelector('.copy-row');if(row){row.outerHTML=row.querySelector('.copy-text').outerHTML;}r();},{once:true});if(img.complete)r();});};
+await document.fonts.ready;
+const copy=canvas.querySelector('.copy');
+const title=copy.querySelector('h1');
+const overflow=()=>copy.scrollHeight>copy.clientHeight||copy.querySelector('.copy-row')?.scrollHeight>copy.clientHeight;
+for(let i=0;i<20 && overflow();i++) title.style.fontSize=(parseFloat(getComputedStyle(title).fontSize)*.95)+'px';
+canvas.dataset.ready='true';
+</script></body></html>

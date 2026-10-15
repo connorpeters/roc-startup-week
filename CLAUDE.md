@@ -32,4 +32,4 @@ Organizations submit events via Airtable form: https://airtable.com/appzNGSk0bcN
 
 ## Marketing Collateral
 
-The repeatable collateral system lives in `collateral/`. Read `AGENTS.md` for the content model, headliner rules, exact export sizes, and regeneration workflow. Run `npm run export` to produce all 32 social graphics plus both flyer PDFs. Never edit generated files under `output/` directly.
+The repeatable collateral system lives in `collateral/`. Read `AGENTS.md` for the content model, headliner rules, exact export sizes, and regeneration workflow. Run `npm run export` to produce 36 campaign graphics plus four social callouts per event, TV slides, and both flyer PDFs. Never edit generated files under `output/` directly.

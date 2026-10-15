@@ -17,9 +17,17 @@
     <p class="lede">Nine reusable campaign concepts, each rendered at Instagram/Facebook, LinkedIn, X/Twitter, and email-newsletter dimensions. Headlines use bold display type, supporting copy is sized for social viewing, and headliners use red badges.</p>
     <nav class="links"><a href="../brand.html">Brand assets</a><a href="COPY.md">Copy package</a><a href="flyer-schedule.html">Full-schedule flyer</a><a href="flyer-qr.html">QR flyer</a></nav>
     <section class="grid" id="grid"></section>
+    <h2 class="section-title">Social event callouts.</h2>
+    <section class="grid" id="social-events"></section>
+    <h2 class="section-title">TV slides.</h2>
+    <p class="lede">1920 × 1080 landscape. Birch schedule slides and red event callouts with Rochester photography. Original birch event slides remain available as alternatives. Daily schedules and event slides use larger type for viewing across a room.</p>
+    <section class="grid" id="tv-grid"></section>
   </main>
   <script type="module">
-    import { concepts, sizes } from './data.mjs';
+    import { concepts, sizes, days, additionalDays } from './data.mjs';
+    import { escapeHtml as esc } from './schedule.mjs';
+    document.querySelector('#tv-grid').innerHTML = `<article class="card"><h2>The full week</h2><div class="formats"><a href="tv.html?mode=week">Open TV slide</a></div></article>` + days.map(day => `<article class="card"><h2>${esc(day.day)} · ${esc(day.date)}</h2><div class="formats"><a href="tv.html?mode=day&day=${day.key}">Daily schedule</a>${day.events.map(event => `<a href="tv.html?mode=event&day=${day.key}&event=${event.id}">${esc(event.title)} · Red</a><a href="tv.html?mode=event&theme=birch&day=${day.key}&event=${event.id}">${esc(event.title)} · Birch alternative</a>`).join('')}</div></article>`).join('');
+    document.querySelector('#social-events').innerHTML = [...days, ...additionalDays].flatMap(day => day.events.map(event => `<article class="card"><iframe loading="lazy" src="social-event.html?event=${event.id}&size=instagram" title="${esc(event.title)} preview"></iframe><h2>${esc(event.title)}</h2><div class="formats">${Object.entries(sizes).map(([size,s]) => `<a href="social-event.html?event=${event.id}&size=${size}">${s.label}</a>`).join('')}</div></article>`)).join('');
     const labels = {'coming':'Intro — Off-white','intro-red':'Intro — Red','one-week':'One Week','full-week-calendar':'Full-week calendar','daily-schedule':'Daily event schedule','happening-today':'Happening Today','dont-miss':'Don’t Miss','thank-you':'Thank-you / recap','see-you-next-year':'See You Next Year'};
     document.querySelector('#grid').innerHTML = Object.keys(concepts).map(key => `<article class="card"><iframe loading="lazy" src="creative.html?concept=${key}&size=instagram" title="${labels[key]} preview"></iframe><h2>${labels[key]}</h2><div class="formats">${Object.entries(sizes).map(([size,s]) => `<a href="creative.html?concept=${key}&size=${size}">${s.label}</a>`).join('')}</div></article>`).join('');
   </script>

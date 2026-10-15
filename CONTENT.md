@@ -13,6 +13,14 @@ The week brings together students, founders, investors, innovators, business lea
 - **Upstate Venture Connect (UVC)** — investor network
 - **RocGrowth** — monthly networking and community events
 
+### Attendance CTA
+
+**Plan Your Week**
+
+**Join us November 2–7.** Explore workshops, founder talks, and networking events across Rochester. View the full schedule and choose the events you’ll attend.
+
+Button: **View Schedule (PDF)** → `/assets/pdf/roc-startup-week-full-schedule.pdf`
+
 ### Event Submission
 
 Organizations submit events via Airtable form:
@@ -29,16 +37,29 @@ https://airtable.com/appzNGSk0bcNRZ2if/pagiuuVoqhZy5DVc9/form
 
 ---
 
-## Schedule (Tentative)
+## Schedule
 
-| Day | Date | Event |
-|-----|------|-------|
-| Monday | Nov 2 | Sales for Startups with Pat Shreckengast, 3 PM at NextCorps; IP Protection for Startups with Nicholas Gallo (Troutman Pepper Locke), 4–5 PM at the NextCorps Auditorium; **City Mark Documentary Screening**, 5:30 PM at Focus Theater in the Sibley Building; **Reception at the Mercantile on Main**, time to be announced |
-| Tuesday | Nov 3 | Opportunities in Fusion Energy (Part of ROC Startup Week) with Dr. Matt Moynihan, 3–4 PM at NextCorps; **Connected Ideas x Startup Grind Investor Panel for Rochester Startup Week**, 5:30–7:30 PM at The Inn on Broadway |
-| Wednesday | Nov 4 | Golisano Institute speaker and AI event, 9 AM; **UVC Office Hours**, 1 PM at RIT (registration required) |
-| Thursday | Nov 5 | RocGrowth Creative Collisions at Fattey Beer Co., 5:30 PM |
-| Friday | Nov 6 | **Fundraising for Your Startup** panel at NextCorps, 3:30–5 PM; happy hour and networking, 5–6 PM |
-| Saturday | Nov 7 | **Mark Ain Business Model Competition** (Ain Center, U of R), 2–4 PM |
+<!-- SCHEDULE:START -->
+| Day | Date | Events |
+| --- | --- | --- |
+| Monday | Nov 2 | Rochester Founder Risk Lab, 10:00-11:30 AM, CoPivot · Virtual; Sales for Startups, 3:00-4:00 PM, Pat Shreckengast · NextCorps; Protecting Your Startup: Intellectual Property Basics, 4:00-5:00 PM, Nicholas Gallo · NextCorps Auditorium; **RocGrowth presents: City Mark - Rochester Logo Documentary**, 5:30-7:00 PM, Focus Theater, Sibley Building; **Reception at the Mercantile on Main**, 7:00 PM-late, Mercantile on Main |
+| Tuesday | Nov 3 | Collaborative Entrepreneurship Lab, 10:00-11:00 AM, Cofactor · Virtual · RSVP for access; Opportunities in Fusion Energy, 3:00-4:00 PM, Dr. Matt Moynihan · NextCorps; **Founder Panel: What It Takes to Build a Successful Company**, 5:30-7:30 PM, The Inn on Broadway · $15 |
+| Wednesday | Nov 4 | Speaking from Experience: Marc Iacona + AI Session, 9:00-11:00 AM, Golisano Institute · Registration required · Limited seats; Can People Find Your Startup Online? Practical SEO & Website Strategies for Founders, 11:00 AM-12:00 PM, Rebecca Fien · Zoom · Passcode: rocstartup; **UVC Office Hours**, 1:00-4:00 PM, RIT · Registration required · Limited seats; Marketing: From Startup to Standout, 5:00-6:30 PM, Simone Center @ RIT · Student Innovation Hall, Room 1600 |
+| Thursday | Nov 5 | **RocGrowth Creative Collisions: Meet Founders & Creatives**, 5:30-7:30 PM, Fattey Beer Co. |
+| Friday | Nov 6 | Scaling Your Startup: Stages of Platform Engineering, 2:00-3:00 PM, Grant Wrazen, ACV Auctions infrastructure lead · NextCorps; **Fundraising for Your Startup**, 3:30-5:00 PM, NextCorps; Happy Hour & Networking, 5:00-6:00 PM, NextCorps |
+| Saturday | Nov 7 | **Mark Ain Business Model Competition**, 2:00-4:00 PM, Wegmans Hall Auditorium · Reception follows |
+<!-- SCHEDULE:END -->
+
+### After Startup Week
+
+<!-- ADDITIONAL-EVENTS:START -->
+- **The Good Business Tour: Rochester Premiere** — Monday, Nov 9, 2026 · 5:00 PM (end time TBD) · George Eastman House · $25
+  Join host David Mammano for the premiere screening of The Good Business Tour’s Rochester episode, celebrating local entrepreneurs. Networking and refreshments are included.
+  Details and tickets: https://thegoodbusinesstour.com/
+- **Flower City AI** — Wednesday, Dec 2, 2026 · Time TBD · The Little Theatre · Full-day conference
+  A full-day conference exploring AI innovation, education, healthcare, art, business, and research in Rochester. Tickets include coffee and lunch.
+  Details and tickets: https://flowercityai.eventbrite.com/
+<!-- ADDITIONAL-EVENTS:END -->
 
 ---
 

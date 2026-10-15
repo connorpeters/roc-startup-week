@@ -5,11 +5,27 @@
   "description": "Repeatable HTML-to-PNG/PDF marketing collateral pipeline for Roc Startup Week",
   "scripts": {
     "brand-assets": "node scripts/build-brand-assets.js",
+    "fetch:headshots": "node scripts/fetch-headshots.js",
     "export:collateral": "node scripts/export-collateral.js",
-    "export": "npm run brand-assets && npm run export:collateral"
+    "export:events": "npm run sync:schedule && npm run fetch:headshots && node scripts/export-collateral.js --events",
+    "export:headers": "node scripts/export-collateral.js --headers-only",
+    "export": "npm run sync:schedule && npm run fetch:headshots && npm run brand-assets && npm run export:collateral",
+    "build:site": "npm run sync:schedule && node scripts/build-site.js",
+    "build": "npm run export && npm run build:site",
+    "dev": "npm run build && wrangler dev",
+    "deploy": "npm run deploy:dev",
+    "deploy:dev": "npm run build && wrangler deploy",
+    "deploy:prod": "npm run build && wrangler deploy --config wrangler.production.jsonc",
+    "check": "node tests/marquee-seam.test.js && node tests/schedule-headliner-hover.test.js && npm run build:site",
+    "sync:schedule": "node scripts/sync-schedule.mjs",
+    "test:schedule": "npm run build:site && node tests/schedule-view.test.js",
+    "export:tv": "npm run sync:schedule && node scripts/export-collateral.js --tv-only"
   },
   "dependencies": {
     "puppeteer": "^25.12.0",
     "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "wrangler": "^4.137.0"
   }
 }

@@ -22,6 +22,8 @@ pnpm-debug.log*
 tmp/
 temp/
 .tmp/
+dist/
+.wrangler/
 
 # Browser and test artifacts
 coverage/

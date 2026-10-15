@@ -2,7 +2,7 @@
 
 ## Short description
 
-Roc Startup Week is a six-day celebration of entrepreneurship and innovation across Greater Rochester. From November 2-7, 2026, founders, students, investors, innovators, business leaders, and neighbors will gather for workshops, founder talks, investor access, networking, and connection.
+Roc Startup Week is a six-day celebration of entrepreneurship and innovation across Greater Rochester. From November 2-7, 2026, founders, students, investors, innovators, business leaders, and neighbors will gather for workshops, founder talks, networking, and connection.
 
 ## Suggested LinkedIn post
 
@@ -20,7 +20,7 @@ One week. Rochester’s startup community.
 
 Roc Startup Week is November 2-7, 2026. Meet founders, investors, students, innovators, and business leaders at events across Rochester.
 
-Workshops. Founder talks. Investor access. Networking. Connection.
+Workshops. Founder talks. Networking. Connection.
 
 Full schedule: rocstartupweek.com
 
@@ -30,7 +30,7 @@ Full schedule: rocstartupweek.com
 
 **Subject:** Roc Startup Week is coming: November 2-7
 
-Roc Startup Week brings Rochester’s founders, students, investors, innovators, business leaders, and community members together for six days of workshops, founder talks, investor access, networking, and connection.
+Roc Startup Week brings Rochester’s founders, students, investors, innovators, business leaders, and community members together for six days of workshops, founder talks, networking, and connection.
 
 The week runs November 2-7, 2026, at venues across Rochester. Whether you are building a company, backing one, joining one, or simply curious about what is being built here, there is a place for you.
 
@@ -62,9 +62,10 @@ Use three to five per post. Always include `#RocStartupWeek`.
 
 Use these exact public-facing names. Headliner titles remain black and bold, with a compact red `HEADLINER` badge immediately beside the event name. The badge is a slightly rounded rectangle, not a capsule.
 
-- City Mark Documentary Screening
+- RocGrowth presents: City Mark - Rochester Logo Documentary
 - Reception at the Mercantile on Main
-- Connected Ideas x Startup Grind Investor Panel for Rochester Startup Week
+- Founder Panel: What It Takes to Build a Successful Company
 - UVC Office Hours
+- RocGrowth Creative Collisions: Meet Founders & Creatives
 - Fundraising for Your Startup
 - Mark Ain Business Model Competition

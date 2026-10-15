@@ -219,8 +219,15 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.8;
 }
 
-.hero__content .btn {
+.hero__buttons {
+    display: flex;
+    gap: 1rem;
     margin-top: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.hero__content .btn {
+    margin-top: 0;
 }
 
 @media (max-width: 768px) {
@@ -312,6 +319,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .logo-banner__item img.logo--lg {
     height: 36px;
+}
+
+.logo-banner__item img.logo--ain-center {
+    height: 51.84px;
 }
 
 .logo-banner__item img.logo--xl {
@@ -485,6 +496,138 @@ h1, h2, h3, h4, h5, h6 {
     border-top: 1px solid var(--color-gray-100);
 }
 
+.schedule__view-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: fit-content;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.schedule__view-controls[hidden] {
+    display: none;
+}
+
+.schedule__view-button {
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--radius);
+    background: var(--color-white);
+    color: var(--color-black);
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition);
+}
+
+.schedule__view-button[aria-pressed="true"] {
+    background: var(--color-black);
+    border-color: var(--color-black);
+    color: var(--color-white);
+}
+
+.schedule__view-button:hover {
+    border-color: var(--color-primary);
+}
+
+.schedule__view-button:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+.schedule[data-view="simplified"] .schedule__event-description,
+.schedule[data-view="simplified"] .schedule__event-note,
+.schedule[data-view="simplified"] .schedule__event-meta-extra,
+.schedule[data-view="simplified"] .schedule__event-organizations {
+    display: none;
+}
+
+.schedule__organizer-chips {
+    display: none;
+}
+
+.schedule[data-view="simplified"] .schedule__organizer-chips {
+    display: none;
+}
+
+.schedule__organizer-chip {
+    display: inline-flex;
+    padding: 0.25rem 0.55rem;
+    border: 1px solid var(--color-gray-300);
+    border-radius: 999px;
+    background: var(--color-white);
+    color: var(--color-gray-700);
+    font-size: 0.68rem;
+    line-height: 1.4;
+}
+
+.schedule[data-view="simplified"] .schedule__events li {
+    padding: 0.65rem;
+}
+
+.schedule[data-view="simplified"] .schedule__events li:has(.schedule__event-organizations) {
+    padding-bottom: 0.65rem;
+}
+
+.schedule__location-short {
+    display: none;
+}
+
+.schedule[data-view="simplified"] .schedule__event-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0;
+    margin-top: 0.45rem;
+    padding-top: 0;
+    border-top: none;
+}
+
+.schedule[data-view="simplified"] .schedule__event-meta > span:not(.schedule__event-meta-extra) {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.35rem;
+    max-width: 100%;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--color-gray-700);
+    font-size: 0.7rem;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.schedule[data-view="simplified"] .schedule__event-meta-location::before {
+    content: "·";
+    margin: 0 0.45rem;
+    color: var(--color-gray-500);
+}
+
+.schedule[data-view="simplified"] .schedule__event-meta-time {
+    white-space: nowrap;
+}
+
+.schedule[data-view="simplified"] .schedule__event-meta strong {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.schedule[data-view="simplified"] .schedule__location-full {
+    display: none;
+}
+
+.schedule[data-view="simplified"] .schedule__location-short {
+    display: inline;
+}
+
 .schedule__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -546,6 +689,54 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.45;
 }
 
+.schedule__event-organizations {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.65rem;
+    position: absolute;
+    right: 0.65rem;
+    bottom: 0.55rem;
+}
+
+.schedule__events li:has(.schedule__event-organizations) {
+    position: relative;
+    padding-bottom: 4rem;
+}
+
+.schedule__event-organizations img {
+    display: block;
+    width: auto;
+    max-width: 5.5rem;
+    height: 1.55rem;
+    object-fit: contain;
+    object-position: right center;
+}
+
+.schedule__event-organizations img[alt="RocGrowth"] {
+    max-width: 11rem;
+    height: 3.1rem;
+}
+
+.schedule[data-view="detailed"] .schedule__event-organizations img[src$="new_RIT_logo1_RGB_0.png"] {
+    max-width: 4.2rem;
+    height: 1.19rem;
+}
+
+.schedule[data-view="detailed"] .schedule__event-organizations img[src$="nextcorps.png"] {
+    max-width: 6.66rem;
+    height: 1.88rem;
+}
+
+.schedule[data-view="detailed"] .schedule__event-organizations img[src$="uofr-ain-center.png"] {
+    max-width: 9rem;
+    height: 3rem;
+}
+
+.schedule[data-view="simplified"] .schedule__event-organizations {
+    bottom: 0.45rem;
+}
+
 .schedule__event--headliner > .schedule__event-title {
     color: var(--color-black);
     font-weight: 700;
@@ -553,7 +744,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .schedule__headliner-pill {
     display: inline-block;
-    flex: 0 0 auto;
+    margin-left: 0.35rem;
     padding: 0.28em 0.62em 0.24em;
     border-radius: 3px;
     background: var(--color-primary);
@@ -564,18 +755,24 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     white-space: nowrap;
+    vertical-align: 0.12em;
 }
 
 .schedule__event--headliner > .schedule__event-title {
-    display: flex;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 0.4rem;
+    display: block;
 }
 
 a.schedule__event-title:hover {
+    text-decoration: none;
+}
+
+a.schedule__event-title:hover > span:first-child {
     text-decoration: underline;
     text-underline-offset: 0.18em;
+}
+
+a.schedule__event-title:hover .schedule__headliner-pill {
+    text-decoration: none;
 }
 
 a.schedule__event-title {
@@ -621,7 +818,7 @@ a.schedule__event-title {
     line-height: 1.45;
 }
 
-.schedule__event-meta span {
+.schedule__event-meta > span {
     display: grid;
     grid-template-columns: max-content minmax(0, 1fr);
     gap: 0.65rem;
@@ -936,6 +1133,16 @@ a.schedule__event-title {
     transform: translateY(-1px);
 }
 
+.btn--red {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn--red:hover {
+    background: #d4181f;
+    transform: translateY(-1px);
+}
+
 /* FOOTER */
 .footer {
     background: var(--color-dark);
@@ -1039,4 +1246,9 @@ a.schedule__event-title {
 
 @media (max-width: 768px) {
     .footer__inner { grid-template-columns: 1fr; }
+}
+
+.schedule__additional-title {
+    margin: 3rem 0 2rem;
+    font-size: 2rem;
 }
