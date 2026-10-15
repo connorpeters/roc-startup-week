@@ -5,34 +5,14 @@ h1,h2{font-family:Abel,sans-serif;font-weight:400;letter-spacing:-.02em;line-hei
 header{display:flex;align-items:center;gap:42px;height:136px}.logo{width:230px;height:120px;object-fit:contain;flex:none}h1{font-size:72px}header .date{margin-left:auto;font-size:28px;font-weight:500}
 footer{position:absolute;bottom:44px;left:76px;right:76px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:20px;font-size:25px}footer strong{font-weight:600}
 .photo{position:relative;margin:0 20px 20px 0;isolation:isolate}.photo:before,.photo:after{content:'';position:absolute;inset:0;z-index:-1;border-radius:2px}.photo:before{border:1.5px solid #0003;transform:translate(10px,10px)}.photo:after{border:2px solid var(--red);transform:translate(20px,20px)}.photo img{display:block;width:100%;height:100%;object-fit:cover;border-radius:2px}
-/* Full week: a photo rail and six calendar cells on shared row tracks. */
-.tv--week{display:grid;grid-template-columns:360px minmax(0,1fr);gap:64px}
-.week-rail{padding-right:36px;border-right:1px solid #d8d2cb;display:flex;flex-direction:column;align-items:flex-start;height:850px}
-.week-rail .logo{width:220px;height:112px;margin-bottom:48px}
-.week-rail .photo{width:304px;height:232px;flex:none;margin-bottom:48px}
-.week-context p{font-size:21px;line-height:1.55;margin:0 0 24px}.week-context p:last-child{font-weight:500;margin-bottom:0}
-.week-rail .scan{gap:16px;margin-top:40px}.week-rail .scan img{width:112px;height:112px}.week-rail .scan p{font-size:18px;line-height:1.55}
-.week-main header{height:126px;display:block;padding-top:4px}.week-main h1{font-size:62px;max-width:1100px;line-height:1.1}.week-main header p{font-size:26px;color:var(--red);margin:18px 0 0;font-weight:500}
-.week-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:500px 200px;gap:28px 36px;margin-top:40px}
-.week-grid article{border-top:2px solid var(--ink);padding-top:18px;min-width:0}
-.week-grid h2{font-size:36px;display:flex;justify-content:space-between;align-items:baseline;margin-bottom:20px}.week-grid h2 span{font-size:27px;color:var(--red)}
 ul{list-style:none;margin:16px 0 0;padding:0}li{line-height:1.25;margin-bottom:14px}time{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:500;color:var(--muted);font-size:20px}li strong{font-size:24px;font-weight:500}.headliner strong{font-weight:700;color:var(--ink)}small{display:block;color:var(--muted);margin-top:5px;font-size:19px}.entry{font-weight:600;color:var(--ink)}
-.week-grid li{display:block;margin-bottom:18px}.week-grid time{display:block;font-size:17px;line-height:1.2;margin-bottom:4px}.week-grid li strong{font-size:21px;line-height:1.3;font-weight:500}.week-grid .entry{font-size:17px;margin-top:3px}
 .headliner-pill{display:inline-block;border-radius:2px;background:var(--red);color:#fffdf9;padding:4px 6px;font-size:12px;line-height:1;font-weight:700;letter-spacing:.04em;vertical-align:3px;white-space:nowrap}
-.split{display:grid;grid-template-columns:minmax(0,1fr) 540px;gap:64px;margin-top:72px;height:674px}.split aside{display:flex;flex-direction:column;gap:48px;align-items:stretch}.split aside .photo{height:220px;margin:0 20px 20px 0;flex:none}
+.split{display:grid;grid-template-columns:minmax(0,1fr) 540px;gap:64px;margin-top:72px;height:674px}.split aside{display:flex;flex-direction:column;gap:36px;align-items:stretch}.split aside .photo{height:220px;margin:0 20px 20px 0;flex:none}
 .orientation{font-size:24px;line-height:1.4;margin:0 0 14px}.audience{font-size:22px;font-weight:600;line-height:1.4;margin:0}
-.scan{display:flex;align-items:center;gap:24px;margin-top:0;flex:none}.scan img{width:144px;height:144px}.scan p{font-size:24px;line-height:1.45;margin:0}.scan strong{font-weight:600}
+.scan{display:flex;align-items:center;gap:24px;margin-top:0;flex:none}.scan img{width:192px;height:192px;flex:none}.scan p{font-size:24px;line-height:1.45;margin:0}.scan strong{font-weight:600}
 .tv--day h1{font-size:64px;margin-bottom:28px}.tv--day li{display:grid;grid-template-columns:250px minmax(0,1fr);gap:24px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid #e8e4df}.tv--day time{font-size:24px}.tv--day li strong{font-size:28px}.tv--day small{font-size:21px}.tv--day .headliner-pill{font-size:13px}
 .tv--event .copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center}.tv--event h1{font-size:70px}.tv--long-title h1{font-size:58px}.tv--event .headliner-pill{font-size:18px;padding:7px 10px;margin-top:18px}
 .event-summary{font-size:28px;line-height:1.45;margin:24px 0 0}.event-time{font-size:38px;font-weight:600;margin:26px 0 10px;color:var(--red);white-space:nowrap;font-variant-numeric:tabular-nums}.event-detail{font-size:27px;line-height:1.4;margin:0}.event-entry{font-size:26px;font-weight:600;line-height:1.4;margin:16px 0 0}
-
-.week-grid .headliner-pill{font-size:10px;padding:4px 5px;vertical-align:2px}
-
-.week-grid .title-end{white-space:nowrap}.week-grid ul{margin-top:0}.week-grid li:last-child{margin-bottom:0}
-
-.week-grid__day--friday li{display:grid;grid-template-columns:max-content minmax(0,1fr);align-items:baseline;column-gap:10px;margin-bottom:8px}
-.week-grid__day--friday time{display:inline;font-size:15px;line-height:1.1;margin:0}
-.week-grid__day--friday li strong{font-size:18px;line-height:1.15}
 
 /* Red event callouts follow the reversed-logo campaign creative. */
 .tv--red{background:var(--red);color:#fffdf9;border-top-color:var(--red)}
@@ -43,3 +23,27 @@ ul{list-style:none;margin:16px 0 0;padding:0}li{line-height:1.25;margin-bottom:1
 
 .tv--red h1{font-family:Montserrat,Arial,sans-serif;font-weight:700;font-size:84px;line-height:1.12;letter-spacing:-.035em}
 .tv--red.tv--long-title h1{font-size:68px}
+
+/* Full week: one header band and six equal day columns, read left to right like a calendar. */
+.tv--week header{height:128px;gap:48px;align-items:center}
+.tv--week .logo{width:210px;height:110px}
+.cols-title h1{font-size:66px;line-height:1}
+.cols-title p{margin:14px 0 0;font-size:23px;color:var(--muted)}
+.cols-title p span{color:var(--red);font-weight:600;margin-right:10px}
+.tv--week header .scan{margin-left:auto;gap:18px}
+.tv--week header .scan img{width:128px;height:128px}
+.tv--week header .scan p{font-size:19px;line-height:1.45}
+.cols-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:26px;margin-top:28px;height:740px}
+.cols-grid article{border-top:3px solid var(--ink);padding-top:16px;min-width:0}
+.cols-grid h2{font-size:36px;display:flex;justify-content:space-between;align-items:baseline;padding-bottom:12px;border-bottom:1px solid #d8d2cb}
+.cols-grid h2 span{font-size:24px;color:var(--red)}
+.cols-grid ul{margin:0}
+.cols-grid li{margin:0;padding:11px 0;border-bottom:1px solid #e3ded8}
+.cols-grid li:last-child{border-bottom:0}
+.cols-grid time{display:block;font-size:17px;font-weight:600;color:var(--ink);margin-bottom:5px}
+.cols-grid li strong{font-size:20px;line-height:1.22;font-weight:500}
+.cols-grid .headliner strong{font-weight:700}
+.cols-grid .title-end{white-space:nowrap}
+.cols-grid .headliner-pill{font-size:10px;padding:4px 5px;vertical-align:2px}
+.cols-grid .event-location{font-size:15px;line-height:1.25;margin-top:6px}
+.cols-grid .entry{font-size:15px;line-height:1.25;margin-top:4px}

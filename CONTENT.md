@@ -44,10 +44,10 @@ https://airtable.com/appzNGSk0bcNRZ2if/pagiuuVoqhZy5DVc9/form
 | --- | --- | --- |
 | Monday | Nov 2 | Rochester Founder Risk Lab, 10:00-11:30 AM, CoPivot · Virtual; Sales for Startups, 3:00-4:00 PM, Pat Shreckengast · NextCorps; Protecting Your Startup: Intellectual Property Basics, 4:00-5:00 PM, Nicholas Gallo · NextCorps Auditorium; **RocGrowth presents: City Mark - Rochester Logo Documentary**, 5:30-7:00 PM, Focus Theater, Sibley Building; **Reception at the Mercantile on Main**, 7:00 PM-late, Mercantile on Main |
 | Tuesday | Nov 3 | Collaborative Entrepreneurship Lab, 10:00-11:00 AM, Cofactor · Virtual · RSVP for access; Opportunities in Fusion Energy, 3:00-4:00 PM, Dr. Matt Moynihan · NextCorps; **Founder Panel: What It Takes to Build a Successful Company**, 5:30-7:30 PM, The Inn on Broadway · $15 |
-| Wednesday | Nov 4 | Speaking from Experience: Marc Iacona + AI Session, 9:00-11:00 AM, Golisano Institute · Registration required · Limited seats; Can People Find Your Startup Online? Practical SEO & Website Strategies for Founders, 11:00 AM-12:00 PM, Rebecca Fien · Zoom · Passcode: rocstartup; **UVC Office Hours**, 1:00-4:00 PM, RIT · Registration required · Limited seats; Marketing: From Startup to Standout, 5:00-6:30 PM, Simone Center @ RIT · Student Innovation Hall, Room 1600 |
+| Wednesday | Nov 4 | Speaking from Experience: Marc Iacona + AI Session, 9:00-11:00 AM, Golisano Institute · Registration required · Limited seats; Can People Find Your Startup Online? Practical SEO & Website Strategies for Founders, 11:00 AM-12:00 PM, Rebecca Fien · Zoom · Passcode: rocstartup; **UVC Office Hours**, 1:00-4:00 PM, RIT · Registration required · Limited seats; **Marketing: From Startup to Standout**, 5:00-6:30 PM, Simone Center @ RIT · Student Innovation Hall, Room 1600 |
 | Thursday | Nov 5 | **RocGrowth Creative Collisions: Meet Founders & Creatives**, 5:30-7:30 PM, Fattey Beer Co. |
 | Friday | Nov 6 | Scaling Your Startup: Stages of Platform Engineering, 2:00-3:00 PM, Grant Wrazen, ACV Auctions infrastructure lead · NextCorps; **Fundraising for Your Startup**, 3:30-5:00 PM, NextCorps; Happy Hour & Networking, 5:00-6:00 PM, NextCorps |
-| Saturday | Nov 7 | **Mark Ain Business Model Competition**, 2:00-4:00 PM, Wegmans Hall Auditorium · Reception follows |
+| Saturday | Nov 7 | **Mark Ain Business Model Competition**, 2:00-4:00 PM, Wegmans Hall Auditorium; Mark Ain Happy Hour, After the competition, Wegmans Hall Auditorium |
 <!-- SCHEDULE:END -->
 
 ### After Startup Week

@@ -5,7 +5,7 @@ const assert = require('node:assert/strict');
     const { days, additionalDays } = await import('../collateral/data.mjs');
     const events = [...days, ...additionalDays].flatMap(day => day.events);
     for (const event of events) {
-        assert.match(event.time, /^\d{1,2}:\d{2}(?: (?:AM|PM))?-(?:\d{1,2}:\d{2} (?:AM|PM)|late)$|^\d{1,2}:\d{2} (?:AM|PM) \(end time TBD\)$/, event.title + ' must have a time range or an explicit open/pending end.');
+        assert.match(event.time, /^After the competition$|^Time TBD$|^\d{1,2}:\d{2}(?: (?:AM|PM))?-(?:\d{1,2}:\d{2} (?:AM|PM)|late)$|^\d{1,2}:\d{2} (?:AM|PM) \(end time TBD\)$/, event.title + ' must have a time range or an explicit open/pending end.');
     }
     const attendanceFields = events.reduce((count, event) => count + 2 + Number(Boolean(event.meta?.Cost)) + Number(Boolean(event.registration)), 0);
     const browser = await puppeteer.launch({ headless: true, args: ['--no-sandbox'] });
@@ -17,13 +17,25 @@ const assert = require('node:assert/strict');
         for (const width of [1440, 390]) {
             await page.setViewport({ width, height: 1000 });
             await page.goto('file://' + process.cwd() + '/dist/index.html', { waitUntil: 'load' });
+            assert.equal(await page.$eval('.schedule__cost-note', element => element.textContent), 'All events are free to attend unless otherwise noted.');
             assert.equal(await visible('.schedule__events li'), events.length);
+            await page.click('[data-schedule-view="detailed"]');
             const descriptions = await visible('.schedule__event-description');
             assert(descriptions > 0);
             await page.click('[data-schedule-view="simplified"]');
             assert.equal(await visible('.schedule__event-description'), 0);
             assert.equal(await visible('.schedule__event-note'), 0);
             assert.equal(await visible('.schedule__event-meta-extra'), 0);
+            const crowdedFields = await page.$$eval('.schedule__event-meta', rows => rows.flatMap(row => {
+                const fields = [...row.children].filter(field => getComputedStyle(field).display !== 'none');
+                return fields.slice(1).flatMap((field, index) => {
+                    const previous = fields[index].getBoundingClientRect();
+                    const current = field.getBoundingClientRect();
+                    const sameLine = current.top < previous.bottom && current.bottom > previous.top;
+                    return sameLine && current.left - previous.right < 6 ? [row.textContent.trim()] : [];
+                });
+            }));
+            assert.deepEqual(crowdedFields, [], 'Simplified attendance fields need visible spacing');
             assert.equal(await visible('.schedule__events li'), events.length);
             assert.equal(await visible('.schedule__event-meta > span:not(.schedule__event-meta-extra)'), attendanceFields);
             assert.equal(await page.$eval('[data-schedule-view="simplified"]', element => element.getAttribute('aria-pressed')), 'true');

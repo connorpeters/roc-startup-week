@@ -94,9 +94,10 @@ async function main() {
   const { days, additionalDays } = await import('../collateral/data.mjs');
   const eventsFlag = process.argv.find(a => a.startsWith('--events'));
   const eventsOnly = eventsFlag ? (eventsFlag.includes('=') ? eventsFlag.split('=')[1] : process.argv[process.argv.indexOf(eventsFlag) + 1]).split(',') : null;
-  const tvOnly = process.argv.includes('--tv-only');
+  const weekOnly = process.argv.includes('--tv-week-only');
+  const tvOnly = weekOnly || process.argv.includes('--tv-only');
   fs.mkdirSync(tvDir, { recursive: true });
-  for (const filename of fs.readdirSync(tvDir)) {
+  for (const filename of weekOnly ? [] : fs.readdirSync(tvDir)) {
     if (filename.endsWith('.png')) fs.unlinkSync(path.join(tvDir, filename));
   }
   fs.mkdirSync(socialDir, { recursive: true });
@@ -151,29 +152,19 @@ async function main() {
     for (const day of days) for (const event of day.events) slides.push({ name: `${String(slides.length + 1).padStart(3, '0')}-${day.key}-${event.id}`, query: `mode=event&theme=birch&day=${day.key}&event=${event.id}` });
     const birchEvents = slides.filter(slide => slide.query.startsWith('mode=event'));
     slides.push(...birchEvents.map(slide => ({ name: `${slide.name}-red`, query: slide.query.replace('theme=birch', 'theme=red') })));
-    for (const slide of slides) {
+    for (const slide of weekOnly ? slides.slice(0, 1) : slides) {
       await page.setViewport({ width: 1920, height: 1080, deviceScaleFactor: 1 });
       await page.goto(`http://127.0.0.1:${port}/collateral/tv.html?${slide.query}`, { waitUntil: 'networkidle0' });
       await ready(page);
-      if (slide.query === 'mode=week') {
-        const calendarIssues = await page.evaluate(() => {
-          const cells = [...document.querySelectorAll('.week-grid > article')];
-          if (cells.length !== 6) return ['Expected six calendar days'];
-          const issues = [];
-          for (const offset of [0, 3]) {
-            const row = cells.slice(offset, offset + 3);
-            for (const selector of [null, 'h2', 'ul']) {
-              const tops = row.map(cell => (selector ? cell.querySelector(selector) : cell).getBoundingClientRect().top);
-              if (Math.max(...tops) - Math.min(...tops) > 1) issues.push('Calendar borders, headings, or lists are misaligned');
-            }
-          }
-          const nextRowTop = cells[3].getBoundingClientRect().top;
-          for (const cell of cells.slice(0, 3)) {
-            if (cell.querySelector('ul').getBoundingClientRect().bottom > nextRowTop - 24) issues.push('Insufficient space between calendar rows');
-          }
-          return issues;
-        });
-        if (calendarIssues.length) throw new Error(calendarIssues.join('; '));
+      const slideParams = new URLSearchParams(slide.query);
+      if (slideParams.get('mode') !== 'event') {
+        const expectedEvents = slideParams.get('mode') === 'week'
+          ? days.flatMap(day => day.events)
+          : days.find(day => day.key === slideParams.get('day')).events;
+        const locations = await page.$$eval('.event-location', elements => elements.map(element => element.textContent.trim()));
+        if (locations.length !== expectedEvents.length || locations.some(location => !location)) {
+          throw new Error(`TV schedule is missing event locations (${slide.name})`);
+        }
       }
       const problems = await page.evaluate(() => [...document.querySelectorAll('h1,h2,li,.scan,.photo,.event-summary,.event-time,.event-detail,.event-entry')].filter(el => {
         const bounds = el.getBoundingClientRect();

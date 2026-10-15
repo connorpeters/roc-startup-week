@@ -169,7 +169,7 @@ body { font-family: 'Montserrat', Arial, sans-serif; background: #ddd; }
 .creative--landscape .calendar-day .headliner-pill { font-size: max(9px, .66em); }
 .creative--landscape .daily-heading { width: 36%; margin-top: 8cqh; }
 .creative--landscape .daily-heading h1 { font-size: min(5cqw, 9.5cqh); }
-.creative--landscape .event-list { position: absolute; left: 42%; right: 5.1cqw; top: 28cqh; bottom: 12cqh; margin: 0; }
+.creative--landscape .event-list { position: absolute; left: 42%; right: 5.1cqw; top: 19.5cqh; bottom: 12cqh; margin: 0; }
 .creative--landscape .event-row { grid-template-columns: 12cqw 1fr; padding: 2.3cqh 0; }
 .creative--landscape.creative--today .event-row { padding: 2.7cqh 2cqw; }
 .creative--landscape .event-row strong { font-size: max(20px, min(1.55cqw, 2.9cqh)); }

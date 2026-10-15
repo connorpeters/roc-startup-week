@@ -20,6 +20,7 @@ Headliners use `headliner: true` in `collateral/data.mjs` and `schedule__event--
 - Reception at the Mercantile on Main
 - Founder Panel: What It Takes to Build a Successful Company
 - UVC Office Hours
+- Marketing: From Startup to Standout
 - RocGrowth Creative Collisions: Meet Founders & Creatives
 - Fundraising for Your Startup
 - Mark Ain Business Model Competition

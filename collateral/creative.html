@@ -76,6 +76,17 @@
       canvas.innerHTML = statement;
     }
 
+    // Busy days can outgrow the list area; shrink rows until the last one clears the footer rule.
+    const list = canvas.querySelector('.event-list');
+    if (list) {
+      await document.fonts.ready;
+      const rows = [...list.children];
+      const limit = () => canvas.querySelector('footer').getBoundingClientRect().top - size.height * 0.02;
+      for (let zoom = 1; zoom > 0.6 && rows.at(-1).getBoundingClientRect().bottom > limit(); zoom -= 0.02) {
+        rows.forEach(row => { row.style.zoom = zoom; });
+      }
+    }
+
     canvas.dataset.ready = 'true';
   </script>
 </body>

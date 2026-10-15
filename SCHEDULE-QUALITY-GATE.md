@@ -84,3 +84,5 @@ Remaining schedule questions above still apply; successful exports do not confir
 - [x] Verified live homepage, assets index, and schedule PDF exactly match the build. Excluded company-header PNG returns 404.
 
 Outstanding logistics above remain as listed; deployment does not resolve those details.
+
+- [x] **Nov 7 — Mark Ain Happy Hour:** listed separately as “After the competition,” at the same venue, per organizer.

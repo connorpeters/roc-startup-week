@@ -19,16 +19,18 @@ const weekTitle = e => {
   const split = e.title.lastIndexOf(' ');
   return `<strong>${esc(e.title.slice(0, split))} </strong><span class="title-end"><strong>${esc(e.title.slice(split + 1))}</strong> ${badge}</span>`;
 };
-const rows = events => `<ul>${events.map(e => `<li class="${e.headliner ? 'headliner' : ''}"><time>${esc(e.time)}</time><div>${mode === "week" ? weekTitle(e) : `<strong>${esc(e.title)}</strong>${e.headliner ? ` ${badge}` : ""}`}${mode === 'week' ? '' : `<small>${esc(detail(e))}</small>`}${entry(e) ? `<small class="entry">${esc(entry(e))}</small>` : ''}</div></li>`).join('')}</ul>`;
-const footer = `<footer><span>Nov 2nd to 7th, 2026 · Rochester, New York</span><strong>${SITE_URL.replace('https://','')}</strong></footer>`;
+const rows = events => `<ul>${events.map(e => {
+  const venue = esc(e.shortLocation || e.location || detail(e));
+  return `<li class="${e.headliner ? 'headliner' : ''}"><time>${esc(e.time)}</time><div><strong>${esc(e.title)}</strong>${e.headliner ? ` ${badge}` : ''}<small class="event-location">${venue}</small>${entry(e) ? `<small class="entry">${esc(entry(e))}</small>` : ''}</div></li>`;
+}).join('')}</ul>`;
+const footer = `<footer><span>All events are free to attend unless otherwise noted.</span><strong>${SITE_URL.replace('https://','')}</strong></footer>`;
 const canvas = document.querySelector('#creative');
 canvas.classList.add(`tv--${mode}`);
 if (isRed) canvas.classList.add("tv--red");
 if (mode === "event" && event.title.length > 90) canvas.classList.add("tv--long-title");
 if (mode === 'week') {
-  const weekPhoto = '<figure class="photo"><img src="../images/rochester-skyline-with-flowers.jpg" alt="Downtown Rochester skyline across the Genesee River"></figure>';
-  const dayBlock = d => `<article class="week-grid__day--${esc(d.key)}"><h2>${esc(d.day)} <span>${esc(d.date)}</span></h2>${rows(d.events)}</article>`;
-  canvas.innerHTML = `<section class="week-rail">${logo}${weekPhoto}<div class="week-context"><p>${esc(tvIntro.description)}</p><p>${esc(tvIntro.audience)}</p></div><div class="scan"><img src="../images/brand/website-qr.png" alt="Scan for the current schedule"><p><strong>Event details<br>and registration</strong></p></div></section><section class="week-main"><header><h1>Rochester Startup Week Schedule:</h1><p>Nov 2nd to 7th, 2026</p></header><div class="week-grid">${days.map(dayBlock).join('')}</div></section>${footer}`;
+  const column = d => `<article><h2>${esc(d.day)} <span>${esc(d.date)}</span></h2><ul>${d.events.map(e => `<li class="${e.headliner ? 'headliner' : ''}"><time>${esc(e.time)}</time>${weekTitle(e)}<small class="event-location">${esc(e.shortLocation || e.location || detail(e))}</small>${entry(e) ? `<small class="entry">${esc(entry(e))}</small>` : ''}</li>`).join('')}</ul></article>`;
+  canvas.innerHTML = `<header>${logo}<div class="cols-title"><h1>Rochester Startup Week Schedule</h1><p><span>November 2–7, 2026</span> ${esc(tvIntro.description)}</p></div><div class="scan"><img src="../images/brand/website-qr.png" alt="Scan for the current schedule"><p>Scan for event details<br><strong>and registration</strong></p></div></header><section class="cols-grid">${days.map(column).join('')}</section>${footer}`;
 } else {
   canvas.innerHTML = `<header>${logo}<span class="date">${esc(day.day)} · ${esc(day.date)}, 2026</span></header><section class="split"><div class="copy">${mode === 'event' ? `<h1>${esc(event.title)}</h1>${event.headliner ? badge : ''}<p class="event-summary">${esc(event.tvSummary || event.description || "")}</p><p class="event-time">${esc(event.time)}</p><p class="event-detail">${esc(detail(event))}</p>${entry(event) ? `<p class="event-entry">${esc(entry(event))}</p>` : ""}` : `<h1>${esc(day.day)}’s schedule:</h1>${rows(day.events)}`}</div><aside><div class="sidebar-copy"><p class="orientation">${esc(tvIntro.description)}</p><p class="audience">${esc(mode === "event" ? event.tvAudience : tvIntro.audience)}</p></div>${photo}<div class="scan"><img src="../images/brand/website-qr.png" alt="Scan for the current schedule"><p>Find your event.<br><strong>Scan for details<br>and registration.</strong></p></div></aside></section>${footer}`;
 }

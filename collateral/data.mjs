@@ -231,6 +231,7 @@ export const days = [
         "title": "Marketing: From Startup to Standout",
         "detail": "Simone Center @ RIT · Student Innovation Hall, Room 1600",
         "id": "marketing-from-startup-to-standout",
+        "headliner": true,
         "organizers": ["RIT Simone Center"],
         "organizationLogos": [{ "name": "RIT", "src": "images/logos/new_RIT_logo1_RGB_0.png" }],
         "location": "Simone Center @ RIT, Student Innovation Hall, Room 1600",
@@ -331,7 +332,7 @@ export const days = [
       {
         "time": "2:00-4:00 PM",
         "title": "Mark Ain Business Model Competition",
-        "detail": "Wegmans Hall Auditorium · Reception follows",
+        "detail": "Wegmans Hall Auditorium",
         "headliner": true,
         "id": "mark-ain-business-model-competition",
         "organizers": ["Ain Center for Entrepreneurship & Innovation"],
@@ -339,12 +340,28 @@ export const days = [
         "location": "Wegmans Building, Wegmans Hall Auditorium, University of Rochester (River Campus)",
         "shortLocation": "Wegmans Hall Auditorium",
         "meta": {
-          "Audience": "Finals and reception open to all"
+          "Audience": "Finals open to all"
         },
-        "description": "Watch University of Rochester student founders present their business models and compete for funding. The finals and following reception are open to everyone, including RIT students and the wider Rochester community.",
-        "note": "Reception follows. Competition entry is limited to current University of Rochester students enrolled in the Ain Foundry Program. Applications are due October 27 at 11:59 PM; see the competition page for entry requirements.",
-        "tvSummary": "Watch University of Rochester student entrepreneurs present business ideas and compete for funding. Reception follows.",
-        "tvAudience": "Finals and reception open to all. Competition entry is limited to eligible University of Rochester students.",
+        "description": "Watch University of Rochester student founders present their business models and compete for funding. The finals are open to everyone, including RIT students and the wider Rochester community.",
+        "note": "Competition entry is limited to current University of Rochester students enrolled in the Ain Foundry Program. Applications are due October 27 at 11:59 PM; see the competition page for entry requirements.",
+        "tvSummary": "Watch University of Rochester student entrepreneurs present business ideas and compete for funding.",
+        "tvAudience": "Finals open to all. Competition entry is limited to eligible University of Rochester students.",
+        "url": "https://www.rochester.edu/aincenter/mark-ain-business-model-competition/"
+      },
+      {
+        "id": "mark-ain-happy-hour",
+        "title": "Mark Ain Happy Hour",
+        "time": "After the competition",
+        "detail": "Wegmans Hall Auditorium",
+        "location": "Wegmans Building, Wegmans Hall Auditorium, University of Rochester (River Campus)",
+        "shortLocation": "Wegmans Hall Auditorium",
+        "organizers": ["Ain Center for Entrepreneurship & Innovation"],
+        "organizationLogos": [{ "name": "Ain Center for Entrepreneurship & Innovation", "src": "images/logos/uofr-ain-center.png" }],
+        "meta": { "Audience": "Open to all" },
+        "description": "Join the happy hour after the Mark Ain Business Model Competition. Open to everyone.",
+        "note": "Happy hour follows the competition at the same venue.",
+        "tvSummary": "Connect with student founders and the Rochester community after the Mark Ain Business Model Competition.",
+        "tvAudience": "Open to everyone.",
         "url": "https://www.rochester.edu/aincenter/mark-ain-business-model-competition/"
       }
     ]
