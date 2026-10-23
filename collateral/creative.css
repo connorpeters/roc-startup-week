@@ -91,7 +91,7 @@ body { font-family: 'Montserrat', Arial, sans-serif; background: #ddd; }
 .creative--calendar header h1 { font-size: min(5.2cqw, 6.8cqh); line-height: .92; }
 .creative--calendar header p { margin: .8cqh 0 0; font-size: min(1.65cqw, 2.15cqh); color: var(--muted); font-weight: 500; }
 .creative--calendar footer { padding-top: 1.4cqh; }
-.calendar { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 0; margin: 2.4cqh 0 1.7cqh; flex: 1; min-height: 0; border-top: 1px solid #bdb7b0; border-left: 1px solid #bdb7b0; background: var(--white); }
+.calendar { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: minmax(0, 1.35fr) minmax(0, 1fr); gap: 0; margin: 2.4cqh 0 1.7cqh; flex: 1; min-height: 0; border-top: 1px solid #bdb7b0; border-left: 1px solid #bdb7b0; background: var(--white); }
 .calendar-day { display: flex; flex-direction: column; min-width: 0; min-height: 0; border-right: 1px solid #bdb7b0; border-bottom: 1px solid #bdb7b0; background: rgba(255,253,249,.72); }
 .calendar-day h2 { display: flex; justify-content: space-between; align-items: baseline; gap: 1cqw; flex: none; padding: 1.3cqh 1.15cqw 1.15cqh; background: var(--birch-dark); border-bottom: 1px solid #cfc8c1; color: var(--red); font-family: 'Montserrat', sans-serif; font-size: max(19px, min(1.9cqw, 2.5cqh)); font-weight: 600; letter-spacing: -.035em; line-height: 1; }
 .calendar-day h2 span { color: var(--ink); font-weight: 700; }
@@ -167,6 +167,8 @@ body { font-family: 'Montserrat', Arial, sans-serif; background: #ddd; }
 .creative--landscape .calendar-day .is-headliner { padding-left: calc(.9cqw + 4px); }
 .creative--landscape .calendar-day time { margin-bottom: .55cqh; font-size: max(12px, min(.74cqw, 1.65cqh)); }
 .creative--landscape .calendar-day .headliner-pill { font-size: max(9px, .66em); }
+.size--email.creative--calendar .calendar-day li { padding: .35cqh .9cqw .4cqh; }
+.size--email.creative--calendar .calendar-day .is-headliner { padding-left: calc(.9cqw + 4px); }
 .creative--landscape .daily-heading { width: 36%; margin-top: 8cqh; }
 .creative--landscape .daily-heading h1 { font-size: min(5cqw, 9.5cqh); }
 .creative--landscape .event-list { position: absolute; left: 42%; right: 5.1cqw; top: 19.5cqh; bottom: 12cqh; margin: 0; }

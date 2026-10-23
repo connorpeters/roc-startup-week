@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Event reminders | Roc Startup Week</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="reminders.css">
+  <script src="reminders.js" defer></script>
+</head>
+<body><main>
+  <a href="/">Roc Startup Week</a>
+  <h1>Remember the events that matter to you.</h1>
+  <p>Choose your events. We’ll send the full schedule when you first sign up, then one combined itinerary at 6 p.m. the evening before your selected events and one 8 a.m. roundup on days with headliners. At most two scheduled emails per day. Enter your email and check the box to sign up.</p>
+  <p>Reminders do not reserve a seat or register you with event organizers. Follow each event’s registration instructions separately. All times are Rochester time.</p>
+  <p id="status" role="status" aria-live="polite">Loading events…</p>
+  <section id="token-action" hidden>
+    <h2 id="action-title"></h2>
+    <button type="button" id="action-button"></button>
+  </section>
+  <form id="signup" hidden>
+    <label for="email">Email address</label>
+    <input id="email" name="email" type="email" autocomplete="email" maxlength="254" required>
+    <fieldset><legend>Choose your events</legend><div id="events"></div></fieldset>
+    <label class="choice"><input type="checkbox" name="consent" required><span>I agree to receive a welcome email with the schedule, an evening itinerary for my selected events, and a morning roundup of the day’s headliners. I can unsubscribe from all notifications at any time. My email will be used to deliver these notifications.</span></label>
+    <p>All times are Rochester time. Missed notifications are not sent retroactively. Events with times still to be announced are not listed.</p>
+    <button type="submit" disabled>Sign up for event notifications</button>
+  </form>
+  <noscript>Enable JavaScript to choose events and request reminders.</noscript>
+</main></body>
+</html>

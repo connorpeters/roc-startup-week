@@ -92,12 +92,15 @@ async function main() {
     return;
   }
   const { days, additionalDays } = await import('../collateral/data.mjs');
+  const campaignsFlag = process.argv.find(a => a.startsWith('--campaigns='));
+  const campaignsOnly = campaignsFlag ? campaignsFlag.split('=')[1].split(',') : null;
+  if (campaignsOnly?.some(concept => !concepts.includes(concept))) throw new Error('Unknown campaign in --campaigns');
   const eventsFlag = process.argv.find(a => a.startsWith('--events'));
   const eventsOnly = eventsFlag ? (eventsFlag.includes('=') ? eventsFlag.split('=')[1] : process.argv[process.argv.indexOf(eventsFlag) + 1]).split(',') : null;
   const weekOnly = process.argv.includes('--tv-week-only');
   const tvOnly = weekOnly || process.argv.includes('--tv-only');
   fs.mkdirSync(tvDir, { recursive: true });
-  for (const filename of weekOnly ? [] : fs.readdirSync(tvDir)) {
+  for (const filename of (weekOnly || campaignsOnly) ? [] : fs.readdirSync(tvDir)) {
     if (filename.endsWith('.png')) fs.unlinkSync(path.join(tvDir, filename));
   }
   fs.mkdirSync(socialDir, { recursive: true });
@@ -107,7 +110,7 @@ async function main() {
   fs.mkdirSync(path.dirname(qrPath), { recursive: true });
   // Social images are generated artifacts. Clear old names so each export has one
   // canonical, sequence-numbered filename and the folder remains distribution-ready.
-  for (const filename of (tvOnly || eventsOnly) ? [] : fs.readdirSync(socialDir)) {
+  for (const filename of (tvOnly || eventsOnly || campaignsOnly) ? [] : fs.readdirSync(socialDir)) {
     if (filename.endsWith('.png')) fs.unlinkSync(path.join(socialDir, filename));
   }
   await QRCode.toFile(qrPath, 'https://rocstartupweek.com', { width: 900, margin: 3, color: { dark: '#1a1a1a', light: '#fffdf9' }, errorCorrectionLevel: 'H' });
@@ -116,15 +119,26 @@ async function main() {
   const browser = await puppeteer.launch({ headless: 'new', args: ['--no-sandbox', '--disable-setuid-sandbox'] });
   try {
     const page = await browser.newPage();
-    if (!tvOnly && !eventsOnly) await renderLinkedInHeaders(page, port);
+    if (!tvOnly && !eventsOnly && !campaignsOnly) await renderLinkedInHeaders(page, port);
     for (const [conceptIndex, concept] of (tvOnly || eventsOnly ? [] : concepts).entries()) {
+      if (campaignsOnly && !campaignsOnly.includes(concept)) continue;
       const sequence = String(conceptIndex + 1).padStart(3, '0');
       for (const [size, [width, height]] of Object.entries(sizes)) {
         await page.setViewport({ width, height, deviceScaleFactor: 1 });
         await page.goto(`http://127.0.0.1:${port}/collateral/creative.html?concept=${concept}&size=${size}`, { waitUntil: 'networkidle0' });
         await ready(page);
+        if (concept === 'full-week-calendar') {
+          const overflow = await page.evaluate(() => [...document.querySelectorAll('.calendar-day')].some(day =>
+            [...day.querySelectorAll('li')].some(event => event.getBoundingClientRect().bottom > day.getBoundingClientRect().bottom + 1)));
+          if (overflow) throw new Error(`Calendar events overflow their day: ${size}`);
+        }
         await page.screenshot({ path: path.join(socialDir, `${sequence}-${concept}-${size}-${width}x${height}.png`), captureBeyondViewport: false });
       }
+    }
+
+    if (campaignsOnly) {
+      console.log(`Exported campaign graphics for: ${campaignsOnly.join(', ')}`);
+      return;
     }
 
     if (!tvOnly) {

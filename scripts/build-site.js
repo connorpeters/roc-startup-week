@@ -122,7 +122,7 @@ const { days, additionalDays, sizes } = await import('../collateral/data.mjs');
 fs.rmSync(dist, { recursive: true, force: true });
 fs.mkdirSync(dist, { recursive: true });
 
-for (const file of ['index.html', 'styles.css', 'brand.html']) copy(file);
+for (const file of ['index.html', 'styles.css', 'brand.html', 'reminders.html', 'reminders.css', 'reminders.js', 'reminders-config.json', 'signup-inline.js']) copy(file);
 copy('images');
 copy('collateral');
 copy('output/social', 'assets/social');

@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "description": "Repeatable HTML-to-PNG/PDF marketing collateral pipeline for Roc Startup Week",
   "scripts": {
+    "build:reminders": "node scripts/build-reminder-events.mjs && python3 backend/reminders/infrastructure.py",
+    "test:reminders": "node scripts/build-reminder-events.mjs && backend/reminders/build/venv/bin/python -m unittest discover -s tests/reminders -v && node tests/reminders/page.test.cjs",
+    "deploy:reminders": "python3 backend/reminders/deploy.py",
     "brand-assets": "node scripts/build-brand-assets.js",
     "fetch:headshots": "node scripts/fetch-headshots.js",
     "export:collateral": "node scripts/export-collateral.js",

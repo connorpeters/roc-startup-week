@@ -42,7 +42,7 @@ https://airtable.com/appzNGSk0bcNRZ2if/pagiuuVoqhZy5DVc9/form
 <!-- SCHEDULE:START -->
 | Day | Date | Events |
 | --- | --- | --- |
-| Monday | Nov 2 | Rochester Founder Risk Lab, 10:00-11:30 AM, CoPivot · Virtual; Sales for Startups, 3:00-4:00 PM, Pat Shreckengast · NextCorps; Protecting Your Startup: Intellectual Property Basics, 4:00-5:00 PM, Nicholas Gallo · NextCorps Auditorium; **RocGrowth presents: City Mark - Rochester Logo Documentary**, 5:30-7:00 PM, Focus Theater, Sibley Building; **Reception at the Mercantile on Main**, 7:00 PM-late, Mercantile on Main |
+| Monday | Nov 2 | Kick off Startup Week! Founder Risk Lab, Coffee, and Networking, 9:00-11:30 AM, CoPivot · Emerge, 412 Linden Ave, Rochester, NY 14625; Modern B2B Sales in the Age of AI, 3:00-4:00 PM, Pat Shreckengast · NextCorps; Protecting Your Startup: Intellectual Property Basics, 4:00-5:00 PM, Nicholas Gallo · NextCorps Auditorium; **RocGrowth presents: City Mark - Rochester Logo Documentary**, 5:30-7:00 PM, Focus Theater, Sibley Building; **Reception at the Mercantile on Main**, 7:00 PM-late, Mercantile on Main |
 | Tuesday | Nov 3 | Collaborative Entrepreneurship Lab, 10:00-11:00 AM, Cofactor · Virtual · RSVP for access; Opportunities in Fusion Energy, 3:00-4:00 PM, Dr. Matt Moynihan · NextCorps; **Founder Panel: What It Takes to Build a Successful Company**, 5:30-7:30 PM, The Inn on Broadway · $15 |
 | Wednesday | Nov 4 | Speaking from Experience: Marc Iacona + AI Session, 9:00-11:00 AM, Golisano Institute · Registration required · Limited seats; Can People Find Your Startup Online? Practical SEO & Website Strategies for Founders, 11:00 AM-12:00 PM, Rebecca Fien · Zoom · Passcode: rocstartup; **UVC Office Hours**, 1:00-4:00 PM, RIT · Registration required · Limited seats; **Marketing: From Startup to Standout**, 5:00-6:30 PM, Simone Center @ RIT · Student Innovation Hall, Room 1600 |
 | Thursday | Nov 5 | **RocGrowth Creative Collisions: Meet Founders & Creatives**, 5:30-7:30 PM, Fattey Beer Co. |
@@ -56,7 +56,7 @@ https://airtable.com/appzNGSk0bcNRZ2if/pagiuuVoqhZy5DVc9/form
 - **The Good Business Tour: Rochester Premiere** — Monday, Nov 9, 2026 · 5:00 PM (end time TBD) · George Eastman House · $25
   Join host David Mammano for the premiere screening of The Good Business Tour’s Rochester episode, celebrating local entrepreneurs. Networking and refreshments are included.
   Details and tickets: https://thegoodbusinesstour.com/
-- **Flower City AI** — Wednesday, Dec 2, 2026 · Time TBD · The Little Theatre · Full-day conference
+- **Flower City AI Conference** — Wednesday, Dec 2, 2026 · Time TBD · The Little Theatre · Full-day conference
   A full-day conference exploring AI innovation, education, healthcare, art, business, and research in Rochester. Tickets include coffee and lunch.
   Details and tickets: https://flowercityai.eventbrite.com/
 <!-- ADDITIONAL-EVENTS:END -->

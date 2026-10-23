@@ -38,11 +38,11 @@ ul{list-style:none;margin:16px 0 0;padding:0}li{line-height:1.25;margin-bottom:1
 .cols-grid h2{font-size:36px;display:flex;justify-content:space-between;align-items:baseline;padding-bottom:12px;border-bottom:1px solid #d8d2cb}
 .cols-grid h2 span{font-size:24px;color:var(--red)}
 .cols-grid ul{margin:0}
-.cols-grid li{margin:0;padding:11px 0;border-bottom:1px solid #e3ded8}
+.cols-grid li{margin:0;padding:6px 0;border-bottom:1px solid #e3ded8}
 .cols-grid li:last-child{border-bottom:0}
 .cols-grid time{display:block;font-size:17px;font-weight:600;color:var(--ink);margin-bottom:5px}
 .cols-grid li strong{font-size:20px;line-height:1.22;font-weight:500}
-.cols-grid .headliner strong{font-weight:700}
+.cols-grid .headliner strong{font-weight:500}
 .cols-grid .title-end{white-space:nowrap}
 .cols-grid .headliner-pill{font-size:10px;padding:4px 5px;vertical-align:2px}
 .cols-grid .event-location{font-size:15px;line-height:1.25;margin-top:6px}

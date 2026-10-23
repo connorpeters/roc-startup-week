@@ -20,16 +20,17 @@ export const days = [
     "date": "Nov 2",
     "events": [
       {
-        "time": "10:00-11:30 AM",
-        "title": "Rochester Founder Risk Lab",
-        "detail": "CoPivot · Virtual",
+        "time": "9:00-11:30 AM",
+        "title": "Kick off Startup Week! Founder Risk Lab, Coffee, and Networking",
+        "detail": "CoPivot · Emerge, 412 Linden Ave, Rochester, NY 14625",
         "id": "rochester-founder-risk-lab",
         "organizers": ["CoPivot"],
-        "location": "Virtual",
+        "location": "Emerge, 412 Linden Ave, Rochester, NY 14625",
+        "shortLocation": "Emerge",
         "meta": {
           "Organizer": "CoPivot"
         },
-        "description": "A live founder experiment exploring the risks entrepreneurs face and the risks they may not see coming.",
+        "description": "Kick off Startup Week with coffee, a light breakfast, and networking from 9:00–9:50 AM, followed by the Founder Risk Lab at 10:00 AM. Carolyn Spencer will use live diagnostic data from founders in the room to reveal shared business challenges and help you discover practical next steps for your business.",
         "url": "https://www.eventbrite.com/e/rochester-founder-risk-lab-tickets-2002241792099",
         "tvSummary": "Explore the risks of starting a company through a live founder experiment.",
         "tvAudience": "For founders and people considering starting a business.",
@@ -37,20 +38,20 @@ export const days = [
       },
       {
         "time": "3:00-4:00 PM",
-        "title": "Sales for Startups",
+        "title": "Modern B2B Sales in the Age of AI",
         "detail": "Pat Shreckengast · NextCorps",
         "id": "sales-for-startups",
         "organizers": ["NextCorps"],
         "organizationLogos": [{ "name": "NextCorps", "src": "images/logos/nextcorps.png" }],
         "location": "NextCorps",
         "meta": {
-          "Speaker": "Pat Shreckengast, GrowthX member",
+          "Speaker": "Pat Shreckengast, Managing Director of GrowthX",
           "Host": "NextCorps"
         },
         "url": "https://www.linkedin.com/in/patshreck/",
-        "tvSummary": "A sales session led by Pat Shreckengast, a member of GrowthX, hosted at NextCorps.",
+        "tvSummary": "A sales session led by Pat Shreckengast, Managing Director of GrowthX, hosted at NextCorps.",
         "tvAudience": "For founders and startup teams working on sales.",
-        "description": "A sales session for startup founders led by Pat Shreckengast, a member of GrowthX, hosted at NextCorps.",
+        "description": "Explore startup sales with a primary focus on selling to businesses (B2B), with principles that apply to startups serving any customer. Led by Pat Shreckengast, Managing Director of GrowthX, and hosted at NextCorps.",
         "speaker": { "name": "Pat Shreckengast", "profileUrl": "https://www.linkedin.com/in/patshreck/", "headshot": "images/speakers/patshreck.jpg" }
       },
       {
@@ -67,7 +68,7 @@ export const days = [
         "url": "https://www.troutman.com/",
         "tvSummary": "Explore intellectual property protection for early-stage companies with Nicholas Gallo.",
         "tvAudience": "For founders thinking about protecting their company’s work.",
-        "description": "Explore intellectual property protection for early-stage companies with Nicholas Gallo of Troutman Pepper Locke.",
+        "description": "Join Nicholas Gallo of Troutman Pepper Locke for an introduction to intellectual property protection for early-stage companies. Designed for founders thinking about how to protect their company’s ideas and work as they build a business.",
         "speaker": { "name": "Nicholas Gallo", "profileUrl": "https://www.linkedin.com/in/nicholasgallo/", "headshot": "images/speakers/nicholasgallo.jpg" }
       },
       {
@@ -85,7 +86,7 @@ export const days = [
         },
         "tvSummary": "Watch City Mark, a documentary about Rochester’s logo, presented by RocGrowth.",
         "tvAudience": "For people interested in Rochester, design, and the city’s story.",
-        "description": "Watch City Mark, a documentary about Rochester’s logo, presented by RocGrowth."
+        "description": "Discover the story behind Rochester’s identity and the legendary mark that represents it. Join RocGrowth for a screening of City Mark at Focus Theater in the Sibley Building, followed by a reception at the Mercantile on Main. Open to everyone.",
       },
       {
         "time": "7:00 PM-late",
@@ -101,7 +102,7 @@ export const days = [
         },
         "tvSummary": "Gather at the Mercantile on Main for a reception after the City Mark documentary.",
         "tvAudience": "For people looking to connect with Rochester’s startup community.",
-        "description": "Gather at the Mercantile on Main for a reception after the City Mark documentary."
+        "description": "Continue the evening after City Mark with RocGrowth Creative Collisions at the Mercantile on Main. Meet founders, creatives, and members of Rochester’s startup community over conversation and included hors d’oeuvres. Open to everyone."
       }
     ]
   },
@@ -139,7 +140,7 @@ export const days = [
         "meta": {
           "Speaker": "Dr. Matt Moynihan"
         },
-        "description": "Fusion startups are already buying. Learn how Western New York businesses can connect the products and services they make to the emerging needs of the fusion energy sector.",
+        "description": "Find your opportunity in fusion energy with Dr. Matt Moynihan: grants and SBIR funding for startups; customers, optics, and supply chain opportunities for businesses; internships, education, and jobs for students; and research connections and grants for academics.",
         "speaker": { "name": "Dr. Matt Moynihan", "profileUrl": "https://www.linkedin.com/in/dr-matthew-moynihan-147ab170/", "headshot": "images/speakers/dr-matthew-moynihan.jpg" },
         "url": "https://www.eventbrite.com/e/opportunities-in-fusion-energy-part-of-roc-startup-week-tickets-1997459967533",
         "tvSummary": "Learn how Western New York businesses can supply products and services to fusion energy startups.",
@@ -159,7 +160,7 @@ export const days = [
           "Cost": "$15 per person",
           "Audience": "Open to all"
         },
-        "description": "A founder panel hosted by Connected Know in partnership with Startup Grind Rochester, with candid conversation, connections, and a showcase of regional startups.",
+        "description": "Hear Karen Skuse, Colin Floom, Ryan Mosher, and Mike Thaney discuss starting and growing companies, navigating setbacks, and lessons learned along the way. Moderated by Connected Know founder Kayte Malik in partnership with Startup Grind Rochester, the evening also includes networking and a showcase of regional startups.",
         "url": "https://luma.com/h9ly5tfm",
         "tvSummary": "Hear candid founder conversations, meet local builders, and see a showcase of regional startups.",
         "tvAudience": "For founders and people interested in Rochester’s startup community.",
@@ -178,6 +179,7 @@ export const days = [
         "title": "Speaking from Experience: Marc Iacona + AI Session",
         "detail": "Golisano Institute · Registration required · Limited seats",
         "id": "speaking-from-experience-marc-iacona-ai-session",
+        "description": "Hear from Marc Iacona through Golisano Institute’s Speaking from Experience series, with an AI session also on the morning’s program. For people interested in entrepreneurship and AI. Registration is required, seats are limited, and business attire is required.",
         "organizers": ["Golisano Institute"],
         "organizationLogos": [{ "name": "Golisano Institute", "src": "images/logos/golisano-institute-dark.svg" }],
         "location": "Golisano Institute",
@@ -231,6 +233,7 @@ export const days = [
         "title": "Marketing: From Startup to Standout",
         "detail": "Simone Center @ RIT · Student Innovation Hall, Room 1600",
         "id": "marketing-from-startup-to-standout",
+        "description": "Join the RIT Simone Center for a marketing session focused on moving a startup from launch to greater visibility. For founders, startup teams, and anyone interested in marketing; open to the wider community as well as students.",
         "headliner": true,
         "organizers": ["RIT Simone Center"],
         "organizationLogos": [{ "name": "RIT", "src": "images/logos/new_RIT_logo1_RGB_0.png" }],
@@ -401,7 +404,7 @@ export const additionalDays = [
     "events": [
       {
         "id": "flower-city-ai-2026",
-        "title": "Flower City AI",
+        "title": "Flower City AI Conference",
         "time": "Time TBD",
         "detail": "The Little Theatre · Full-day conference",
         "location": "The Little Theatre, 240 East Ave, Rochester, NY 14604",

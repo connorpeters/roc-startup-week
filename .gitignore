@@ -23,6 +23,8 @@ tmp/
 temp/
 .tmp/
 dist/
+backend/reminders/build/
+__pycache__/
 .wrangler/
 
 # Browser and test artifacts

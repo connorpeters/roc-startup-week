@@ -4,13 +4,30 @@ The schedule is still under review. Do not generate final marketing assets or de
 
 ## Outstanding event details
 
-- [x] **Nov 2 — Rochester Founder Risk Lab:** confirmed virtual; both `detail` and `location` updated.
-- [ ] **Nov 2 — Rochester Founder Risk Lab:** verify that the event registration page supplies virtual joining instructions.
-- [ ] **Nov 2 — Sales for Startups:** obtain an event/registration link; Pat’s LinkedIn profile is not an attendance destination. Confirm format and specific learning outcomes. Confirmed: hosted at NextCorps, led by Pat Shreckengast, a GrowthX member; not organized directly by UVC.
-- [ ] **Nov 2 — Protecting Your Startup: Intellectual Property Basics:** replace the law firm homepage with event/registration information and confirm attendance instructions.
+### Email notifications — October 23, 2026
+
+- [x] Deployed dedicated AWS reminder infrastructure with `roc-startup-week-` resource names and checkbox-only consent.
+- [x] SES verified `remind.rocstartupweek.com`; sender is `reminders@remind.rocstartupweek.com`.
+- [x] Tested signup, unsubscribe, and two real Lambda preview emails; recipient confirmed both arrived.
+- [x] Daily notification schedule: selected-event itinerary at 6 p.m. the prior evening, plus all-headliner roundup at 8 a.m.; maximum two scheduled messages per day, Rochester time.
+- [x] Reminder event descriptions match the website's detailed-mode source, including RocGrowth Creative Collisions at the Mercantile reception.
+- [x] First signup sends one welcome email with all 20 simple schedule entries and the latest website PDF link. Real duplicate-signup test sent no second welcome; unsubscribe prevented subsequent delivery.
+- [x] Volume controls: per-IP/per-email signup limits, conditional delivery claims, at most three attempts within one hour, and a service-wide budget of 1,000 email send attempts per Rochester day. All 19 backend tests and desktop/mobile email layout checks pass.
+- [x] Embedded email/consent/submit forms in the homepage hero and footer. Checkbox signup includes every upcoming timed event, enabling one evening itinerary and one morning headliner roundup at most; welcome remains once per address. All 20 backend tests and inline form desktop/mobile tests pass.
+- [ ] Confirm exact start times for Mark Ain Happy Hour and Flower City AI before adding them to timed notifications. They are omitted from the reminder catalog until then.
+- [x] User authorized live deployment on October 23, 2026. Published embedded hero/footer forms and the detailed signup page to https://rocstartupweek.com. Production version: `379abfa3-4f67-43b7-8f12-06ac7cf7af13`.
+- [x] Verified production gray-until-consent buttons, both embedded forms, the API-backed event list, and the live PDF against the reviewed build. No additional test emails sent during release verification.
+- [x] Updated Pat Shreckengast's title to “Modern B2B Sales in the Age of AI” and renamed “Flower City AI Conference,” preserving stable IDs. Rebuilt collateral, checked both letter-size PDFs, and fixed TV/calendar spacing for the longer schedule. Calendar exports now check that events remain inside their day cells.
+
+- [x] **Nov 2 — Kick off Startup Week! Founder Risk Lab, Coffee, and Networking:** starts at 9:00 AM at Emerge, 412 Linden Ave, Rochester, NY 14625, per organizer; both `detail` and `location` updated.
+- [ ] **Nov 2 — Kick off Startup Week! Founder Risk Lab, Coffee, and Networking:** confirm the existing 11:30 AM end time still applies and registration page reflects the updated title, start time, and venue.
+- [ ] **Nov 2 — Sales for Startups:** obtain an event/registration link; Pat’s LinkedIn profile is not an attendance destination. Confirm format and specific learning outcomes. Confirmed: hosted at NextCorps, led by Pat Shreckengast, Managing Director of GrowthX; not organized directly by UVC.
+- [ ] **Nov 2 — Protecting Your Startup: Intellectual Property Basics:** replace the law firm homepage with event/registration information and confirm attendance instructions, specific IP topics, and learning outcomes. Description currently uses only the confirmed introductory focus and founder audience.
 - [ ] **Nov 2 — City Mark documentary and Mercantile reception:** confirm whether RSVP is needed; add event links where available. Both are open to everyone.
 - [ ] **Nov 4 — UVC Office Hours:** confirm exact RIT building/room, and how curated meetings are assigned. Confirm whether registration requires any preparation or additional application. Registration is required and seats are limited. Confirmed format: fireside keynote with Sean Colombo, followed by curated one-on-one meetings with mentors who are typically investors or exited entrepreneurs.
-- [ ] **Nov 4 — Marketing: From Startup to Standout at RIT:** obtain speaker names, session format, a substantive description, and concrete learning outcomes. Resolve headliner status after reviewing the content; it is not yet promoted to a headliner.
+- [ ] **Nov 4 — Marketing: From Startup to Standout at RIT:** obtain speaker names, session format, specific topics, and concrete learning outcomes. Added a description using the existing confirmed focus and audience; headliner status remains enabled in the schedule source.
+- [ ] **Nov 4 — Speaking from Experience: Marc Iacona + AI Session:** confirm AI-session presenter, topics, format, and connection to Marc’s talk before adding more specific claims. Added a description of the confirmed program and attendance requirements.
+- [x] **Nov 3 — Founder Panel:** expanded description with panelists, moderator, and discussion topics from the organizer’s registration page: https://luma.com/h9ly5tfm.
 - [ ] **Nov 4 — Speaking from Experience:** verify that the registration page communicates required registration and limited seats. Additional AI-session detail is optional and does not block release.
 - [ ] **Nov 5 — RocGrowth Creative Collisions:** verify the public event link and any RSVP instructions. Use RocGrowth consistently. Current published time: 5:30–7:30 PM; venue: Fattey Beer Co., 60 Adventure Place.
 - [ ] **Nov 7 — Mark Ain:** recheck application deadline and full entry requirements against the competition page before release. Finals and reception are open to everyone; entry is restricted to eligible U of R students.
