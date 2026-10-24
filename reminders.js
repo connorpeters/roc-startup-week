@@ -23,6 +23,7 @@ window.addEventListener('hashchange', () => {
       status.textContent = result.message;
     }
     if (action) {
+      document.querySelector('#reminders-intro').hidden = true;
       const section = document.querySelector('#token-action');
       const button = document.querySelector('#action-button');
       section.hidden = false;
